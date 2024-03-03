@@ -27,8 +27,8 @@ ul{
     list-style-type: none;
   }
   #navbar{
-    width: 100%; /* Ocupa toda a largura da janela */
-    background-color: transparent; /* Cor de fundo do menu */
+    width: 100%;
+    background-color: transparent; 
     margin: 20;
   
   }
@@ -308,4 +308,66 @@ p{
     }
 }
 
+@media(max-width:1100px){
+    form{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+    :root {
+        --linear-grad: linear-gradient(to right, #f95a5a, #610505);
+        --grad-clr1: #f95a5a;
+        --grad-clr2: #610505;
+    }
+
+    .container{
+        width: 600px;
+    }
+    .overlay-left{
+        right: 50%;
+        padding: 0;
+    }
+    .overlay-left h1 {
+        width: 50%;
+        margin-right:  60px;  
+    }
+
+    .overlay-left p{
+        width: 50%;
+        margin-right:  60px;
+    }
+
+    #signUpOverlay{
+        margin-right: 70px;
+        margin-bottom: 20px;
+    }
+    #overlayBtn{
+        left: 50%;
+        width: 2%;
+        margin-right:  60px;
+       margin-top: 10%;
+    }
+
+    .overlay-right{
+        margin: 40;
+        padding: 100px;
+       
+    }
+
+    .overlay-right h1{
+        
+        margin-left: 75%;
+        
+    }
+
+    .overlay-right p{
+        width: 150%;
+        margin-left: 75%;
+    }
+
+    #signInOverlay{
+        width: 160px;
+        margin: 0px 0px 0px 100px;
+    }
+}
 
