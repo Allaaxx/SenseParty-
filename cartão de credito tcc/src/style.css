@@ -14,7 +14,7 @@ body {
 ul{
   display: flex;
   justify-content: center;
-  margin-bottom: ;
+  margin-bottom: 0;
 }
 #navbar{
   width: 100%;
