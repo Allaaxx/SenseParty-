@@ -24,6 +24,7 @@
     --padding: 1.2rem;
     
     --box-shadow: 0 2rem 3rem var(--color-light);
+<<<<<<< HEAD
 
 }
 
@@ -35,6 +36,9 @@
     --color-light: rgba(0, 0, 0, 0.4);
     --box-shadow: 0 2rem 3rem var(--color-light);
 }
+=======
+  }
+>>>>>>> 94214eb17123e6113f56758457dd0659b05dda2b
   
 *{
     margin: 0;
@@ -58,7 +62,10 @@ body{
     background: var(--color-background);
     user-select: none;
     overflow-x: hidden;
+<<<<<<< HEAD
     color: var(--color-dark);
+=======
+>>>>>>> 94214eb17123e6113f56758457dd0659b05dda2b
 }
 
 .container{
@@ -140,6 +147,10 @@ aside{
 }
 
 aside .top{
+<<<<<<< HEAD
+=======
+    background: white;
+>>>>>>> 94214eb17123e6113f56758457dd0659b05dda2b
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -152,7 +163,11 @@ aside .logo img{
 }
 
 aside .sidebar{
+<<<<<<< HEAD
     background:var(--color-white);
+=======
+    background: white;
+>>>>>>> 94214eb17123e6113f56758457dd0659b05dda2b
     display: flex;
     flex-direction: column;
     height: 86vh;
@@ -221,6 +236,7 @@ aside .sidebar .message-count{
     border-radius: var(--border-radius-1);
 }
 
+<<<<<<< HEAD
 /* side bar final */
 
 
@@ -717,3 +733,6 @@ main .recent-orders a{
     }
 
 }
+=======
+/* side bar final */
+>>>>>>> 94214eb17123e6113f56758457dd0659b05dda2b
