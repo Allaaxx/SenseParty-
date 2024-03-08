@@ -19,31 +19,18 @@ ul{
 #navbar{
   width: 100%;
   background-color: transparent; 
-<<<<<<< HEAD
   margin: 0;
 
 }
 li, a, img{
   width: 50px;
   height: 50px;
-=======
-  margin: 20;
-
-}
-li, a, img{
-  width: 100px;
-  height: 100px;
->>>>>>> 94214eb17123e6113f56758457dd0659b05dda2b
 }
 
 .wrapper {
   min-height: 100vh;
   display: flex;
-<<<<<<< HEAD
   padding: 10px 15px;
-=======
-  padding: 50px 15px;
->>>>>>> 94214eb17123e6113f56758457dd0659b05dda2b
 }
 @media screen and (max-width: 700px), (max-height: 500px) {
   .wrapper {
@@ -652,8 +639,5 @@ li, a, img{
     box-shadow: 0px 17px 20px -6px rgba(36, 52, 70, 0.36);
   }
 }
-<<<<<<< HEAD
 
 /* MAIN */
-=======
->>>>>>> 94214eb17123e6113f56758457dd0659b05dda2b

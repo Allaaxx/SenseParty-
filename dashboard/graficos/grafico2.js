@@ -21,7 +21,7 @@ const config2 = {
     data: {
         datasets: [{
             data: [porcentagemMeta2, porcentagemProgresso2],
-            backgroundColor: ['white', '#7380ec']
+            backgroundColor: ['white', '#f77882']
         }]
     },
     options: {

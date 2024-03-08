@@ -308,7 +308,7 @@ p{
     }
 }
 
-@media(max-width:1100px){
+@media(max-width:600px){
     form{
         display: flex;
         justify-content: center;
@@ -320,8 +320,12 @@ p{
         --grad-clr2: #610505;
     }
 
+    body{
+        
+        width: 150vw;
+    }
     .container{
-        width: 600px;
+        width: 100vw;
     }
     .overlay-left{
         right: 50%;
