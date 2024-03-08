@@ -24,7 +24,6 @@
     --padding: 1.2rem;
     
     --box-shadow: 0 2rem 3rem var(--color-light);
-<<<<<<< HEAD
 
 }
 
@@ -36,9 +35,6 @@
     --color-light: rgba(0, 0, 0, 0.4);
     --box-shadow: 0 2rem 3rem var(--color-light);
 }
-=======
-  }
->>>>>>> 94214eb17123e6113f56758457dd0659b05dda2b
   
 *{
     margin: 0;
@@ -62,10 +58,7 @@ body{
     background: var(--color-background);
     user-select: none;
     overflow-x: hidden;
-<<<<<<< HEAD
     color: var(--color-dark);
-=======
->>>>>>> 94214eb17123e6113f56758457dd0659b05dda2b
 }
 
 .container{
@@ -147,10 +140,6 @@ aside{
 }
 
 aside .top{
-<<<<<<< HEAD
-=======
-    background: white;
->>>>>>> 94214eb17123e6113f56758457dd0659b05dda2b
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -163,11 +152,7 @@ aside .logo img{
 }
 
 aside .sidebar{
-<<<<<<< HEAD
     background:var(--color-white);
-=======
-    background: white;
->>>>>>> 94214eb17123e6113f56758457dd0659b05dda2b
     display: flex;
     flex-direction: column;
     height: 86vh;
@@ -236,7 +221,6 @@ aside .sidebar .message-count{
     border-radius: var(--border-radius-1);
 }
 
-<<<<<<< HEAD
 /* side bar final */
 
 
@@ -311,30 +295,19 @@ main .insights .progress {
     height: 7rem;
 }
 
-main .insights .progress svg {
+main .insights .progress div{
     position: absolute;
-    width: 100%;
-    height: 100%;
-}
-
-main .insights .progress svg circle {
-    fill: none;
-    stroke: var(--color-primary);
-    stroke-width: 14;
-    stroke-linecap: round;
-    stroke-dasharray: 110;
-    stroke-dashoffset: 0;
-}
-
-main .insights .progress .number {
-    position: absolute;
-    top: 45%;
-    left: 48%;
+    top: 55%;
+    left: 50%; 
     transform: translate(-50%, -50%);
-    color: var(--color-primary);
-    font-size: 1.5rem;
-    margin: 0; /* Remova qualquer margem existente */
+    margin: 0;
 }
+
+
+
+
+
+
 main .insights h3{
     margin: 1rem 0 0.6rem;
     font-size: 1rem;
@@ -733,6 +706,3 @@ main .recent-orders a{
     }
 
 }
-=======
-/* side bar final */
->>>>>>> 94214eb17123e6113f56758457dd0659b05dda2b
