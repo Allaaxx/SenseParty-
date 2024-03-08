@@ -308,7 +308,7 @@ p{
     }
 }
 
-@media(max-width:600px){
+@media(max-width:768px){
     form{
         display: flex;
         justify-content: center;
