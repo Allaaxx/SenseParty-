@@ -82,7 +82,9 @@ h1{
     margin: 20px 0px;
 }
 
-
+.container #Alternar{
+   display: none;
+}
 .social-container a{
     border: 1px solid #DDD;
     border-radius: 50%;
@@ -111,7 +113,9 @@ input{
     border: none;
     outline: none;
 }
-
+input:focus ~ label{
+    width: 100%;
+}
 label{
     position: absolute;
     left: 50%;
@@ -123,9 +127,7 @@ label{
     transition: 0.3s;
 }
 
-input:focus ~ label{
-    width: 100%;
-}
+
 
 a{
     color: #333;
@@ -350,6 +352,30 @@ p{
         width: 90vw;
         
     }
+    .container #Alternar{
+        background: transparent;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width: 10%;
+        top: 10%;
+        left: 10%;
+        position: absolute;
+        border: none;
+     }
+
+     .container #Alternar :hover{
+        background: var(--grad-clr1);
+       
+     }
+    
+
+     .container #Alternar span{
+        color: var(--grad-clr1);
+         background-color: var(--grad-clr1);
+        color: #fff;
+        border-radius: 50%;
+     }
 
 }
 
