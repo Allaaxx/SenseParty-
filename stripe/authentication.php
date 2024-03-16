@@ -1,16 +1,19 @@
-<?php 
-    require_once 'vendor/autoload.php';
+<?php
+require_once 'vendor/autoload.php';
 
-    \Stripe\Stripe::setApiKey('sk_test_51OsUkmAB5JWK6wD3f2b7VAOY4tflew1VxVbgLpdKFTOcEZ3SlQ79CSpLSoygEYCMIEigCZGBgqdzfQ5haxisvpPn00UUBTdp6l');
+$stripeApiKey = 'sk_test_51OsUkmAB5JWK6wD3f2b7VAOY4tflew1VxVbgLpdKFTOcEZ3SlQ79CSpLSoygEYCMIEigCZGBgqdzfQ5haxisvpPn00UUBTdp6l';
 
-    $stripe = new \Stripe\StripeClient();
+$stripe = new \Stripe\StripeClient([
+    'api_key' => $stripeApiKey
+]);
 
+$accounts = $stripe->accounts->all([]);
 
-    $deletedCustomer = \Stripe\Customer::retrieve('cus_PjP5zXF7T5Aa20')->delete();
-
-    echo \Stripe\Customer::all();
-    
-    echo \Stripe\Customer::retrieve('cus_PjRhoJrrCrlSqf', [
-      'stripe_account' => 'acct_1OtwLfPAA6eSZJb3'
-    ]);
+foreach ($accounts as $account) {
+    echo "ID da Conta: " . $account->id . "\n";
+    echo "Nome da Empresa: " . $account->business_profile->name . "\n";
+    echo "Email da Conta: " . $account->email . "\n";
+    // Adicione outras informações que você deseja exibir sobre cada conta
+    echo "------------------------------------------\n";
+}
 ?>
