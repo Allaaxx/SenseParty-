@@ -1,18 +1,13 @@
-<?php
-// index.php
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $cardNumber = $_POST["card_number"];
-    $cardHolder = $_POST["card_holder"];
-    $cardMonth = $_POST["cardMonth"];
-    $cardYear = $_POST["cardYear"];
-    $cardCvv = $_POST["cardCvv"];
-
-    // Imprime os valores das variáveis
-    echo "Número do cartão: " . $cardNumber . "<br>";
-    echo "Titular do cartão: " . $cardHolder . "<br>";
-    echo "Mês de validade: " . $cardMonth . "<br>";
-    echo "Ano de validade: " . $cardYear . "<br>";
-    echo "CVV: " . $cardCvv . "<br>";
-}
-?>
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="create-checkout-session.php" method="POST">
+        <button type="submit">Pay</button>
+      </form>
+</body>
+</html>

@@ -15,7 +15,7 @@
   </nav>
 <!-- partial:index.partial.html -->
 <div class="wrapper" id="app">
-    <form action="index.php" method="post" class="card-form">
+    <form action="index.php" method="post" class="card-form" id="form1">
       <div class="card-list">
         <div class="card-item" v-bind:class="{ '-active' : isCardFlipped }">
           <div class="card-item__side -front">
@@ -166,12 +166,33 @@
           </div>
         </div>
 
-        <button class="card-form__button">
-          Submit
-        </button>
+        
+      </div>
+    </form class="card-form">
+    <form action="index.php" id="form2">
+      <div>
+        <div class="card-input">
+          <label  for="nome">Nome:</label><br>
+          <input class="card-input__input"type="text" id="nome" name="nome" required><br>
+        </div>
+        <div class="card-input">
+          <label for="endereco">Endereço:</label><br>
+          <input class="card-input__input" type="text" id="endereco_linha1" name="endereco_linha1" placeholder="Rua e número" required><br>
+          <input class="card-input__input" type="text" id="endereco_linha2" name="endereco_linha2" placeholder="Complemento (opcional)"><br>
+          <input class="card-input__input" type="text" id="cidade" name="cidade" placeholder="Cidade" required><br>
+          <input class="card-input__input" type="text" id="estado" name="estado" placeholder="Estado" required><br>
+          <input class="card-input__input" type="text" id="pais" name="pais" placeholder="País" required><br>
+          <input class="card-input__input" type="text" id="cep" name="cep" placeholder="CEP" required><br>
+        </div>
+        <div class="card-input">
+          <label for="email">Email:</label><br>
+          <input class="card-input__input" type="email" id="email" name="email" required>
+      <button class="card-form__button" id="submitBtn">
+        Submit
+      </button>
       </div>
     </form>
-    
+      
     
   </div>
 <!-- partial -->

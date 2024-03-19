@@ -1,4 +1,8 @@
-
+document.getElementById("submitBtn").addEventListener("click", function() {
+  // Submeter os dois formulários ao clicar no botão
+  document.getElementById("form1").submit();
+  document.getElementById("form2").submit();
+});
 new Vue({
   el: "#app",
   data() {
