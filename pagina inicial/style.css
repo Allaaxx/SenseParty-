@@ -28,7 +28,7 @@ h1, h2, h3, h4, h5, h6, a {
 
     width: 100vw;
     display: flex;
-    height: 8vw;
+    height: 10vw;
     justify-content: space-around;
     align-items: center;
 }
@@ -38,9 +38,9 @@ h1, h2, h3, h4, h5, h6, a {
     display: flex;
     justify-content: center;
 }
-.navbar img{
-    width: 3.3rem;
-    height: 3.3rem;
+.navbar .links img{
+    width: 3rem;
+    height: 3rem;
     
 }
 .navbar ul{
@@ -60,13 +60,13 @@ h1, h2, h3, h4, h5, h6, a {
     align-items: center;
     justify-content: center ;
     display: flex;
-    width: 80px;
-    height: 40px;
+    width: 60px;
+    height: 30px;
     background-color: var(--color-secondary);
 }
 
 #logo{
-    height: 5.3rem;
+    height: 3.3rem;
     width: auto;
     color: var(--color-secondary);
   
@@ -75,4 +75,70 @@ h1, h2, h3, h4, h5, h6, a {
     position: absolute;
     display: none;
     justify-content: space-around;
+}
+
+main{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    
+}
+main section{
+    width: 50%;
+    height: 100vh;
+}
+.typewritter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+   
+}
+.typewritter .container{
+    width: 100%;
+    height: 100%;
+}
+.container .content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+}
+.typewritter h1{
+    color: var(--color-black);
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2rem;
+    width: 70%;
+}
+.objetos{   
+    display: flex;
+    justify-content: center;
+   
+}
+
+#obj1{
+    top: 51%;
+    left: 10%;
+    z-index: -1;    
+    position: absolute;
+    display: flex;
+    width: 30%;
+    height: 3%;
+    background-color: var(--color-secondary);
+}
+
+.section-bottom{
+    display: flex;
+    justify-content: center;
+   
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-secondary);
 }
