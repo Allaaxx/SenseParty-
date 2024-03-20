@@ -8,13 +8,17 @@
 :root {
     --color-black: #000000;
     --color-primary: #f0739f;
-    --color-secondary: #F53377;
-    --color-dark: #ebaabd ;
+    --color-secondary: #ebaabd;
+    --color-dark: #F53377 ;
+    --color-white: #ffffff;
 }
 body {
     font-family: 'Copse', serif; 
+    height: 100vw;
+    width: 100vw;
+    overflow-x: hidden;
 }
-h1, h2, h3, h4, h5, h6, a {
+h1, h2, h3, h4, h5, h6, a, p {
     font-family: 'Madimi One', cursive; 
 }
 
@@ -62,7 +66,6 @@ h1, h2, h3, h4, h5, h6, a {
     display: flex;
     width: 60px;
     height: 30px;
-    background-color: var(--color-secondary);
 }
 
 #logo{
@@ -73,7 +76,7 @@ h1, h2, h3, h4, h5, h6, a {
 }
 .confete{
     position: absolute;
-    display: none;
+   z-index: 3;
     justify-content: space-around;
 }
 
@@ -91,8 +94,8 @@ main section{
     height: 100vh;
 }
 .typewritter{
-    display: flex;
-    justify-content: center;
+    position: relative;
+    display: flex;justify-content: center;
     align-items: center;
     
    
@@ -107,7 +110,7 @@ main section{
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 50%;
+    height: 30%;
 }
 .typewritter h1{
     color: var(--color-black);
@@ -115,7 +118,7 @@ main section{
     font-weight: 700;
     text-align: center;
     margin-bottom: 2rem;
-    width: 70%;
+    width: 50%;
 }
 .objetos{   
     display: flex;
@@ -123,22 +126,370 @@ main section{
    
 }
 
-#obj1{
-    top: 51%;
-    left: 10%;
-    z-index: -1;    
+#obj1 {
+    left: 30%; 
+    top: 17%; 
+    z-index: -1;
     position: absolute;
+    width: 40%;
+    height: 2.2%;
+    background-color:  var(--color-dark);
+}
+
+.section-bottom-tittle{
     display: flex;
-    width: 30%;
-    height: 3%;
-    background-color: var(--color-secondary);
+    align-items: center;
+    flex-direction: column; 
+    width: 100%;
+    height: 100%;
+    
 }
 
 .section-bottom{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    flex-direction: row; 
+    justify-content: center; 
+    
+}
+
+.section-bottom p{
+    color: var(--color-black);
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+    margin: 2rem;
+    width: 50%;
+}
+
+#obj2{
+    left: 37.8%;
+    top: 30%;
+    z-index: -1;
+    position: absolute;
+    width: 28.9%;
+    height: 3%;
+    background-color: var(--color-dark);
+}
+
+#see-more{
+    border: none;
+    position: relative;
+    width: 12%;
+    height: 6%;
+    background-color: var(--color-white);
+    border-radius: 5px;
+
     display: flex;
     justify-content: center;
-   
+    align-items: center;
+    overflow: hidden;
+}
+
+#see-more::before{
+    content: "";
+    position: absolute;
+    width: 12%;
+    height: 200%;
+    background: linear-gradient(180deg, var(--color-secondary), var(--color-dark));
+
+    animation: animate 3s linear infinite;
+}
+
+@keyframes animate{
+    
+    100%{
+        transform: rotate(360deg);
+    }
+
+}
+
+#see-more::after{
+    content: "";
+    position: absolute;
+    background-color: var(--color-white);
+    inset: 5px;
+    border-radius: inherit;
+}
+
+#see-more:hover::before {
+    background: linear-gradient(180deg, var(--color-dark), var(--color-secondary)); /* Altera o gradiente ao passar o mouse */
+}
+
+#see-more:hover {
+    background-color: var(--color-secondary); /* Altera a cor de fundo ao passar o mouse */
+}
+
+
+
+#see-more a h2{
+    position: relative;
+    color: var(--color-black);
+    z-index: 1;
+    width: 100px;
+
+} 
+
+.imagem-section{
+    display: flex;
+    position: relative;
+}
+
+#person1{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    left: 19.2%;
+    top: 8%;
+    width: 30%;
+    height: auto;
+    z-index: 1;
+
+}
+.sob-obj{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100%;
-    background-color: var(--color-secondary);
+    z-index: 2;
+}
+
+#subObj3-1{
+    opacity: 0.5;
+    background-color: var(--color-primary);
+    left: 19.1%;
+    top: 8%;
+    z-index: 2;
+    position: absolute;
+    width: 4%;
+    height: 20.7%;
+    
+}
+#subObj3-2{
+    background-color: var(--color-primary);
+    left: -6.8%;
+    top: 2.2%;
+    z-index: 1;
+    position: absolute;
+    width: 25.9%;
+    height:26.5%;
+    
+}
+#subObj3-3{
+    background-color: var(--color-primary);
+    left: 19%;
+    top: 2.2%;
+    z-index: 2;
+    position: absolute;
+    width: 4.2%;
+    height:5.8%;    
+}
+
+#confete1{
+    position: absolute;
+    left: 0;
+    top: 5%;
+    z-index: 3;
+    width: 20%;
+    height: auto;
+}
+
+#person2{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    left: 9%;
+    top: 39%;
+    width: 40%;
+    height: auto;
+    z-index: 1;
+}
+
+#confete3{
+    position: absolute;
+    left: 55%;
+    top: 50%;
+    z-index: 3;
+    width: 20%;
+    height: auto;
+}
+
+#subObj4-1{
+    opacity: 0.5;
+    background-color: var(--color-primary);
+    left: 44%;
+    top: 57%;
+    z-index: 2;
+    position: absolute;
+    width: 5%;
+    height: 9.5%;
+}
+
+#subObj4-2{
+    background-color: var(--color-primary);
+    left: 44%;
+    top: 66.5%;
+    z-index: 1;
+    position: absolute;
+    width: 5%;
+    height: 6.5%;
+}
+
+#subObj4-3{
+    background-color: var(--color-primary);
+    left: 49%;
+    top: 57%;
+    z-index: 2;
+    position: absolute;
+    width: 20%;
+    height: 16%;
+}
+
+#person3{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    left: 52%;
+    top: 17%;
+    width: 30%;
+    height: auto;
+    z-index: 1;
+}
+
+#confete2{
+    position: absolute;
+    left: 56%;
+    top: -9%;
+    z-index: 3;
+    width: 13%;
+    height: auto;
+}
+
+#subObj5-1{
+    opacity: 0.5;
+    background-color: var(--color-primary);
+    left: 58%;
+    top: 17%;
+    z-index: 2;
+    position: absolute;
+    width: 24%;
+    height: 18%;
+}
+
+#subObj5-2{
+    background-color: var(--color-primary);
+    left: 58%;
+    top: 11%;
+    z-index: 1;
+    position: absolute;
+    width: 24%;
+    height: 6%;
+}
+
+#subObj5-3{
+    background-color: var(--color-primary);
+    left: 82%;
+    top: 11%;
+    z-index: 2;
+    position: absolute;
+    width: 4%;
+    height: 24%;
+}
+#confete4{
+    position: absolute;
+    left: -6%;
+    top: 60%;
+    z-index: 3;
+    width: 20%;
+    height: auto;
+}
+#star1{
+    position: absolute;
+    left: 4%;
+    top: -59%;
+    z-index: 3;
+    width: 2%;
+    height: auto;
+}
+#star2{
+    position: absolute;
+    left: 6%;
+    top: -66%;
+    z-index: 3;
+    width: 2.3%;
+    height: auto;
+}
+
+#star3{
+    position: absolute;
+    left: 9%;
+    top: -65%;
+    z-index: 3;
+    width: 2%;
+    height: auto;
+}
+
+#star4{
+    position: absolute;
+    left: 75%;
+    top: -50%;
+    z-index: 3;
+    width: 1.4%;
+    height: auto;
+}
+#star5{
+    position: absolute;
+    left: 76.8%;
+    top: -53%;
+    z-index: 3;
+    width: 1.4%;
+    height: auto;
+}
+
+#star6{
+    position: absolute;
+    left: 84%;
+    top: -54%;
+    z-index: 3;
+    width: 1.4%;
+    height: auto;
+}
+
+#star7{
+    position: absolute;
+    left: 90%;
+    top: -50%;
+    z-index: 3;
+    width: 1.4%;
+    height: auto;
+}
+
+#star8{
+    position: absolute;
+    left: 87%;
+    top: -93%;
+    z-index: 3;
+    width: 2.5%;
+    height: auto;
+}
+
+li a {
+    color: var(--color-black); 
+    position: relative; 
+    text-decoration: none; 
+}
+
+li a::after {
+    content: ''; /* Adiciona conteúdo ao pseudo-elemento */
+    position: absolute; /* Define a posição absoluta do sublinhado */
+    bottom: 0; /* Alinha o sublinhado na parte inferior */
+    left: 0; /* Alinha o sublinhado à esquerda */
+    width: 100%; /* Define a largura do sublinhado como 100% do link */
+    height: 2px; /* Define a altura do sublinhado */
+    background-color: var(--color-primary); /* Cor do sublinhado */
+    transition: width 0.3s ease; /* Adiciona uma transição suave para a largura do sublinhado */
+}
+
+li a:hover::after {
+    width: 50%; /* Altera a largura do sublinhado ao passar o mouse */
 }
