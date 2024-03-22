@@ -241,11 +241,9 @@ main section{
 }
 .imagem-section .coluna1 {
   display: grid;
-  grid-template-columns: 60% 40%;
-  grid-template-rows: 35% 65%;
-  width: 100%;
-  
-} 
+  grid-template-columns: 47% 50%;
+  grid-template-rows: 35%;
+}
 
 .imagem-section .coluna1 .sob-obj5 {
   grid-row: span 2;
