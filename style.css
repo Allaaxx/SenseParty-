@@ -95,8 +95,11 @@ main section{
 }
 .typewritter{
     position: relative;
-    display: flex;justify-content: center;
+    display: flex;
+    justify-content: center;
     align-items: center;
+    width: 50%;
+
     
    
 }
@@ -118,7 +121,7 @@ main section{
     font-weight: 700;
     text-align: center;
     margin-bottom: 2rem;
-    width: 50%;
+    width: 400px;
 }
 .objetos{   
     display: flex;
@@ -168,7 +171,7 @@ main section{
     top: 30%;
     z-index: -1;
     position: absolute;
-    width: 28.9%;
+    width: 280px;
     height: 3%;
     background-color: var(--color-dark);
 }
@@ -234,17 +237,64 @@ main section{
 .imagem-section{
     display: flex;
     position: relative;
+    width: 50%;
+}
+.imagem-section .coluna1 {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  grid-template-rows: 35% 65%;
+  width: 100%;
+  
+} 
+
+.imagem-section .coluna1 .sob-obj5 {
+  grid-row: span 2;
+  height: 100%;
 }
 
-#person1{
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    position: absolute;
-    left: 19.2%;
-    top: 8%;
-    width: 30%;
-    height: auto;
-    z-index: 1;
 
+
+#confete1 {
+  position: absolute;
+  padding: 30px 0;
+  z-index: 2;
+  width: 212px;
+  height: 303px;
+}
+
+#confete3{
+position: absolute;
+margin: 300px;
+z-index: 3;
+width: 20%;
+height: auto;
+}
+
+
+#confete2{
+position: absolute;
+left: 56%;
+top: -9%;
+z-index: 3;
+width: 13%;
+height: auto;
+}
+#confete4{
+position: absolute;
+left: -6%;
+top: 60%;
+z-index: 3;
+width: 20%;
+height: auto;
+}
+
+#person1 {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  margin: 87px 0 0 275px;
+  width: 320px;
+  height: 320px;
+  z-index: 1;
 }
 .sob-obj{
     position: absolute;
@@ -255,154 +305,122 @@ main section{
     height: 100%;
     z-index: 2;
 }
-
-#subObj3-1{
-    opacity: 0.5;
-    background-color: var(--color-primary);
-    left: 19.1%;
-    top: 8%;
-    z-index: 2;
-    position: absolute;
-    width: 4%;
-    height: 20.7%;
-    
+.sob-obj3{
+    width: 595px;
+    height: 406px;
 }
-#subObj3-2{
-    background-color: var(--color-primary);
-    left: -6.8%;
-    top: 2.2%;
-    z-index: 1;
-    position: absolute;
-    width: 25.9%;
-    height:26.5%;
-    
+#subObj3-1 {
+  opacity: 0.5;
+  background-color: var(--color-primary);
+  margin: 85px 0 0 275px;
+  z-index: 2;
+  position: absolute;
+  width: 44px;
+  height: 223px;
 }
-#subObj3-3{
-    background-color: var(--color-primary);
-    left: 19%;
-    top: 2.2%;
-    z-index: 2;
-    position: absolute;
-    width: 4.2%;
-    height:5.8%;    
+#subObj3-2 {
+  background-color: var(--color-primary);
+  margin: 23px 0 0 0;
+  z-index: 1;
+  position: absolute;
+  width: 275px;
+  height: 286px;
+}
+#subObj3-3 {
+  background-color: var(--color-primary);
+  margin: 23px 0 0 274px;
+  z-index: 2;
+  position: absolute;
+  width: 45px;
+  height: 62px;
 }
 
-#confete1{
-    position: absolute;
-    left: 0;
-    top: 5%;
-    z-index: 3;
-    width: 20%;
-    height: auto;
+
+
+#person2 {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  margin: 30px 0 0 50px;
+  width: 420px;
+  height: 300px;
+  z-index: 1;
 }
 
-#person2{
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    position: absolute;
-    left: 9%;
-    top: 39%;
-    width: 40%;
-    height: auto;
-    z-index: 1;
+
+.sob-obj4{
+  width: 642px;
+  height: 400px;
+}
+#subObj4-1 {
+  opacity: 0.5;
+  background-color: var(--color-primary);
+  margin: 226px 0 0 423px;
+  z-index: 2;
+  position: absolute;
+  width: 48px;
+  height: 104px;
 }
 
-#confete3{
-    position: absolute;
-    left: 55%;
-    top: 50%;
-    z-index: 3;
-    width: 20%;
-    height: auto;
-}
-
-#subObj4-1{
-    opacity: 0.5;
-    background-color: var(--color-primary);
-    left: 44%;
-    top: 57%;
-    z-index: 2;
-    position: absolute;
-    width: 5%;
-    height: 9.5%;
-}
-
-#subObj4-2{
-    background-color: var(--color-primary);
-    left: 44%;
-    top: 66.5%;
-    z-index: 1;
-    position: absolute;
-    width: 5%;
-    height: 6.5%;
+#subObj4-2 {
+  background-color: var(--color-primary);
+  margin: 330px 0 0 423px;
+  z-index: 1;
+  position: absolute;
+  width: 48px;
+  height: 68px;
 }
 
 #subObj4-3{
     background-color: var(--color-primary);
-    left: 49%;
-    top: 57%;
+    margin: 226px 0 0 470px;
     z-index: 2;
     position: absolute;
-    width: 20%;
-    height: 16%;
+    width: 20%; 
+    /* trocar todos px de tamanho para porcentagem  */
+    height: 172px;
 }
 
-#person3{
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    position: absolute;
-    left: 52%;
-    top: 17%;
-    width: 30%;
-    height: auto;
-    z-index: 1;
+#person3 {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  margin: 350px 0 0 40px;
+  width: 200px;
+  height: 200px;
+  z-index: 1;
 }
 
-#confete2{
-    position: absolute;
-    left: 56%;
-    top: -9%;
-    z-index: 3;
-    width: 13%;
-    height: auto;
+.sob-obj5{
+  width: 595px;
+  height: 406px;
 }
-
-#subObj5-1{
-    opacity: 0.5;
-    background-color: var(--color-primary);
-    left: 58%;
-    top: 17%;
-    z-index: 2;
-    position: absolute;
-    width: 24%;
-    height: 18%;
+#subObj5-1 {
+  opacity: 0.5;
+  background-color: var(--color-primary);
+  margin: 350px 0 0 90px;
+  z-index: 2;
+  position: absolute;
+  width: 150px;
+  height: 150px;
 }
 
 #subObj5-2{
     background-color: var(--color-primary);
-    left: 58%;
-    top: 11%;
+    margin: 300px 0 0 90px;
     z-index: 1;
     position: absolute;
-    width: 24%;
-    height: 6%;
+    width: 151px;
+    height: 50px;
 }
 
 #subObj5-3{
     background-color: var(--color-primary);
-    left: 82%;
-    top: 11%;
+    margin: 300px 0 0 240px;
     z-index: 2;
     position: absolute;
-    width: 4%;
-    height: 24%;
+    width: 50px;
+    height: 200px;
 }
-#confete4{
-    position: absolute;
-    left: -6%;
-    top: 60%;
-    z-index: 3;
-    width: 20%;
-    height: auto;
-}
+
 #star1{
     position: absolute;
     left: 4%;

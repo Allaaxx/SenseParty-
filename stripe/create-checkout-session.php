@@ -28,8 +28,8 @@ require_once 'vendor/autoload.php';
         ],
         ],
         'payment_intent_data' => ['application_fee_amount' => 123],
-        'success_url' => 'https://example.com/success',
-        'cancel_url' => 'https://example.com/cancel',
+        'success_url' => '../ecommerce tcc/product page css/index.html',
+        'cancel_url' => '../404 erro e avião de papel tcc/src/index.html ',
     ],
     ['stripe_account' => $account->id]
     );
