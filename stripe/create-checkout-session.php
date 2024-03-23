@@ -17,20 +17,7 @@ require_once 'vendor/autoload.php';
     ]);
     header('Location: ' . $accountLink->url);
 
+   
 
-    $stripe->checkout->sessions->create(
-    [
-        'mode' => 'payment',
-        'line_items' => [
-        [
-            'price' => $price,
-            'quantity' => $quantity,
-        ],
-        ],
-        'payment_intent_data' => ['application_fee_amount' => 123],
-        'success_url' => '../ecommerce tcc/product page css/index.html',
-        'cancel_url' => '../404 erro e avião de papel tcc/src/index.html ',
-    ],
-    ['stripe_account' => $account->id]
-    );
+
 ?>
