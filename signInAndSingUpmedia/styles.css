@@ -5,27 +5,30 @@
     font-family: 'Poppins', sans-serif;
 }
 :root {
-    --linear-grad: linear-gradient(to right, #f9dd5a, #c99925);
-    --grad-clr1: #f9dd5a;
-    --grad-clr2: #c99925;
+    --color-black: #000000;
+    --color-primary: #f0739f;
+    --color-secondary: #ebaabd;
+    --color-dark: #F53377 ;
+    --color-white: #ffffff;
+    --linear-grad: linear-gradient(90deg, var(--color-dark), var(--color-secondary));
 }
 body {
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: #444;
-}
+
 .container {
     position: relative;
     width: 70vw;
     height: 80vh;
     background: #fff;
-    border-radius: 15px;
-    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
-    overflow: hidden;
+    
+
 }
 .container::before {
+    border-radius: 80px 10px;
     content: "";
     position: absolute;
     top: 0;
@@ -94,7 +97,7 @@ form.sign-up-form {
     left: 2%;
     width: 0;
     height: 2px; 
-    background-color: var(--grad-clr1);
+    background-color: var(--color-dark);
     transition: width 1000ms ease; /* Transição para animar a largura */
     transform-origin: bottom; /* Define a origem da transformação como a parte inferior do pseudoelemento */
 }
@@ -146,7 +149,7 @@ form.sign-up-form {
     height: 50px;
     border: none;
     border-radius: 50px;
-    background: var(--grad-clr1);
+    background: var(--color-dark);
     color: #fff;
     font-weight: 600;
     margin: 10px 0;
@@ -156,7 +159,7 @@ form.sign-up-form {
 
 
 .btn:hover {
-    background: var(--grad-clr2);
+    background: var(--color-secondary);
 }
 .social-text {
     margin: 10px 0;
@@ -181,8 +184,8 @@ a {
     text-decoration: none;
 }
 .social-icon:hover {
-    color: var(--grad-clr2);
-    border-color: var(--grad-clr1);
+    color: var(--color-secondary);
+    border-color: var(--color-dark);
 }
 .panels-container {
     position: absolute;
@@ -261,14 +264,122 @@ a {
 .container.sign-up-mode .left-panel {
     pointer-events: all;
 }
+h2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    display: center;
+}
+
+.star{
+    position: absolute;
+    z-index: 8;
+    justify-content: space-around;
+
+}
+#star1{
+    position: fixed;
+    left: 5%;
+    top: -60%;
+    width: 50px;
+    height: 850px;
+}
+#star2{
+    
+    left: -6%;
+    top: -80%;
+    width: 50px;
+    height: 850px;
+}
+
+#star3{
+    left: -9%;
+    top: -95%;
+    width: 50px;
+    height: 850px;
+}
+
+#star4{
+    left: 110%;
+    top: -120%;
+    width: 50px;
+    height: 1000px;
+}
+#star5{
+    left: 76.8%;
+    top: -63%;
+    width: 50px;
+    height: 550px;
+}
+
+#star6{
+    left: 84%;
+    top: -84%;
+    width: 50px;
+    height: 650px;
+}
+
+#star7{
+    position: absolute;
+    left: 90%;
+    top: -100%;
+    width: 50px;
+    height: 850px;
+}
+
+#star8{
+    left: 100%;
+    top: -108%;
+    width: 50px;
+    height: 850px;
+}
+
+.confete{
+    position: absolute;
+    z-index: 6;
+    justify-content: space-around;
+}
+
+#confete1 {
+    left: 87%;
+    width: 10%;
+    height: auto;
+  }
+  
+  #confete2{  
+    left: 80%;
+    top: 86%;
+    width: 13%;
+    height: auto;
+    }
+
+  
+  #confete3{
+  left: 1%;
+  top: 60%;
+  width: 15%;
+  height: auto;
+  }
 /*Responsive*/
 @media (max-width:779px) {
+    .star{
+        display: none;
+    }
+    .confete{
+        display: none;
+    }
     .container {
         width: 100vw;
         height: 100vh;
     }
 }
 @media (max-width:635px) {
+    .star{
+        display: none;
+    }
+    .confete{
+        display: none;
+    }
     .container::before {
         display: none;
     }
@@ -297,4 +408,11 @@ a {
     form {
         width: 90%;
     }
+    .star{
+        display: none;
+    }
+    .confete{
+        display: none;
+    }
 }   
+}
