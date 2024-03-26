@@ -133,15 +133,6 @@ main section{
    
 }
 
-#obj1 {
-    left: 30%;
-    top: 62%;
-    z-index: -1;
-    position: absolute;
-    width: 40%;
-    height: 4%;
-    background-color: var(--color-dark);
-}
 
 .section-bottom-tittle{
     display: flex;
