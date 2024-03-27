@@ -25,10 +25,10 @@ try {
             ],
         ],
         'payment_intent_data' => [
-            'application_fee_amount' => 123, // Taxa da aplicação em centavos
+            'application_fee_amount' => 2000, // Taxa da aplicação em centavos
         ],
         'success_url' => 'https://senseparty.netlify.app/ecommerce%20tcc/pruduct%20page%20css/index.html',
-        'cancel_url' => 'https://senseparty.netlify.app/404%20erro%20e%20avião%20de%20papel%20tcc/src/index.html',
+        'cancel_url' => 'https://senseparty.netlify.app/404%20erro%20e%20avi%C3%A3o%20de%20papel%20tcc/src/index.html',
     ],
     ['stripe_account' => 'acct_1Ov1oQPB0zZS1YTs']); // Especifica a conta conectada da Stripe
 

@@ -19,7 +19,10 @@
     <form action="deleteall.php">
       <input type="submit" value="Deletar todas as contas restritas">
     </form>
-    
+
+    <form action="session-payments.php">
+      <input type="submit" value="Pagamento de sessão">
+    </form>
   </body>
 </html>
 
