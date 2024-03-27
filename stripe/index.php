@@ -3,7 +3,7 @@
     <title>Checkout</title>
   </head>
   <body>
-    <form action="/create-checkout-session.php" method="POST">
+    <form action="create-checkout-session.php" method="POST">
       <button type="submit">Logar Stripe</button>
     </form>
 
@@ -19,6 +19,7 @@
     <form action="deleteall.php">
       <input type="submit" value="Deletar todas as contas restritas">
     </form>
+    
   </body>
 </html>
 
@@ -60,5 +61,3 @@
      
      
     ?>
-    
-
