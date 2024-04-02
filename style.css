@@ -232,20 +232,18 @@ main section{
 .imagem-section{
     display: flex;
     position: relative;
-    width: 50%;
-}
-.imagem-section .coluna1 {
-  display: grid;
-  grid-template-columns: 47% 50%;
-  grid-template-rows: 50%;
+    width: 50vw;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
-.imagem-section .coluna1 .sob-obj5 {
-  grid-row: span 2;
-  height: 100%;
+.coluna1{
+  width: 70%;
 }
 
-
+.coluna2{
+  width: 30%;
+}
 
 #confete1 {
   position: absolute;
@@ -284,9 +282,9 @@ height: auto;
 #person1 {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   position: absolute;
-  margin: 87px 0 0 275px;
-  width: 320px;
-  height: 320px;
+  margin: 87px 0 0 30.4%;
+  width: 35%;
+  height: auto;
   z-index: 1;
 }
 .sob-obj{
@@ -294,37 +292,37 @@ height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 100%;
+    width: 320px;
+    height: 320px;
     z-index: 2;
 }
 .sob-obj3{
-    width: 595px;
-    height: 406px;
+  width: 595px;
+  height: 406px;
 }
 #subObj3-1 {
   opacity: 0.5;
   background-color: var(--color-primary);
-  margin: 85px 0 0 275px;
+  margin: 85px 0 0 30.3%;
   z-index: 2;
   position: absolute;
   width: 44px;
-  height: 223px;
+  height: 189px;
 }
 #subObj3-2 {
-  background-color: var(--color-primary);
-  margin: 23px 0 0 0;
-  z-index: 1;
-  position: absolute;
-  width: 275px;
-  height: 286px;
+    background-color: var(--color-primary);
+    margin: 23px 0px 0px 0px;
+    z-index: 1;
+    position: absolute;
+    width: 30.5%;
+    height: 25.9%;
 }
 #subObj3-3 {
   background-color: var(--color-primary);
-  margin: 23px 0 0 274px;
+  margin: 23px 0 0 30.3%;
   z-index: 2;
   position: absolute;
-  width: 45px;
+  width: 44px;
   height: 62px;
 }
 
@@ -376,15 +374,15 @@ height: auto;
 #person3 {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   position: absolute;
-  margin: 350px 0 0 40px;
-  width: 200px;
-  height: 200px;
+  margin: 10% 0 0 50%;
+  width: 20%;
+  height: auto;
   z-index: 1;
 }
 
 .sob-obj5{
-  width: 595px;
-  height: 406px;
+  width: 100%;
+  height: 40%;
 }
 #subObj5-1 {
   opacity: 0.5;
