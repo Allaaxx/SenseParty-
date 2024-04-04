@@ -19,7 +19,8 @@ body {
     overflow-x: hidden;
 }
 h1, h2, h3, h4, h5, h6, a, p {
-    font-family: 'Madimi One', cursive; 
+  font-family: 'Madimi One', cursive; 
+  text-align: center;
 }
 
 .container-header{
