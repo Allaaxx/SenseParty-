@@ -12,6 +12,9 @@
     --color-white: #ffffff;
     --linear-grad: linear-gradient(90deg, var(--color-dark), var(--color-secondary));
 }
+html{
+    overflow: hidden;
+}
 body {
     overflow: hidden;
     display: flex;
