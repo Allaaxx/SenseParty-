@@ -14,7 +14,7 @@
 }
 body {
     font-family: 'Copse', serif; 
-    height: 100vw;
+    
     width: 100vw;
     overflow-x: hidden;
 }
@@ -127,7 +127,7 @@ main section{
     font-weight: 700;
     text-align: center;
     margin-bottom: 2rem;
-    width: 100%;
+    width: 80%;
 }
 .objetos{   
     display: flex;
@@ -143,6 +143,16 @@ main section{
     width: 100%;
     
     
+}
+
+.section-bottom-tittle h2{
+    color: var(--color-black);
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 2rem;
+    width: 80%;
+
 }
 
 .section-bottom{
@@ -659,7 +669,14 @@ ul{
 }
 
 @media  screen and (max-width:635px){
-  .sob-obj4{
+ 
+  .sob-obj4, .sob-obj3, .imagem-section{
     display: none;
   }
+
+  .section-bottom-tittle{
+    margin-bottom: 5%;
+  }
 }
+
+
