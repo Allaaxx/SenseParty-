@@ -54,8 +54,7 @@ h1, h2, h3, h4, h5, h6, a, p {
     color: var(--color-black);
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: space-around;align-items: center;
     width: 100%;
     
 }
@@ -657,4 +656,10 @@ ul{
     display: block !important;
 }
 
+}
+
+@media  screen and (max-width:635px){
+  .sob-obj4{
+    display: none;
+  }
 }
