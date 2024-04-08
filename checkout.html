@@ -41,44 +41,86 @@
 </head>
 <body>
 
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary py-3 fixed-top">
-        <div class="container">
-            <a class="nav-link" href="index.html">
-            <img class="logo" src="assets/imgs/logo.png" alt="logo">
-            </a>
+   <!-- NAVBAR -->
+   <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary py-3 fixed-top">
+    <div class="container">
+        <a class="nav-link" href="index.html">
+        <img class="logo" src="assets/imgs/logo.png" alt="logo">
+        </a>
 
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse nav-buttons" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              
-              <li class="nav-item">
-                <a class="nav-link" href="index.html">Home</a>
-              </li>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse nav-buttons" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
 
-              <li class="nav-item">
-                <a class="nav-link" href="shop.html">Loja</a>
-              </li>
+          <li class="nav-item">
+            <a class="nav-link" href="shop.html">Loja</a>
+          </li>
 
-              <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contato</a>
-              </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contato</a>
+          </li>
 
-              <li class="nav-item">
-                <!-- fa-shake faz ele mexer adcionar futuramente com js -->
-                <a href="cart.html"><i class="fa-solid fa-bag-shopping" ></i></a>
-                <a href="account.html"><i class="fa-solid fa-user"></i></a>
+          <li class="nav-item">
+            <!-- fa-shake faz ele mexer adcionar futuramente com js -->
+            <a href="cart.html"><i class="fa-solid fa-bag-shopping" ></i></a>
+            <a href="account.html"><i class="fa-solid fa-user"></i></a>
 
-              </li>
+          </li>
 
-              
-            </ul>
-          </div>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+      <!-- Checkout -->
+
+      <section class="my-5 py-5">
+        <div class="container text-center mt-3 pt-5">
+            <h2 class="form-weight-bold">Finalizar Compra</h2>
+            <hr class="mx-auto">
         </div>
-      </nav>
-      
+        <div class="mx-auto container">
+            <form id="checkout-form">
+                <div class="form-group checkout-small-element">
+                    <label for="">Nome</label>
+                    <input type="text" class="form-control" id="checkout-name" name="nome" placeholder="Nome" required>
+                </div>
+
+                <div class="form-group checkout-small-element">
+                    <label for="">Email</label>
+                    <input type="text" class="form-control" id="checkout-email" name="email" placeholder="E-mail" required>
+                </div>
+
+                <div class="form-group checkout-small-element">
+                    <label for="">Phone</label>
+                    <input type="tel" class="form-control" id="checkout-phone" name="phone" placeholder="Telefone" required>
+                </div>
+
+                <div class="form-group checkout-small-element">
+                    <label for="">Cidade</label>
+                    <input type="text" class="form-control" id="checkout-city" name="city" placeholder="Cidade" required>
+                </div>
+
+                <div class="form-group checkout-large-element">
+                    <label for="">Endereço</label>
+                    <input type="text" class="form-control" id="checkout-address" name="address" placeholder="Endereço" required>
+                </div>
+
+                <div class="form-group checkout-btn-container">
+                    <input type="submit" class="btn" id="checkout-btn" value="Checkout">
+                </div>
+            </form>
+        </div>
+      </section>
+
+
 
   <!-- Footer-->
 
