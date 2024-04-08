@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Madimi+One&display=swap');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: Madimi One, sans-serif;
 }
 :root {
     --color-black: #000000;
@@ -22,130 +23,8 @@ body {
     justify-content: center;
     min-height: 100vh;
 }
-/* navbar */
 
-
-.nav-buttons{
-    margin-left: 50%;
-}
-
-body{
-    font-family: Madimi One, sans-serif;
-}
-
-h1{
-    font-size: 2.5rem;
-    font-weight: 700;
-}
-
-h2{
-    font-size: 1.8rem;
-    font-weight: 600;
-}
-
-h3{
-    font-size: 1.5rem;
-    font-weight: 800;
-}
-
-h4{
-    font-size: 1.2rem;
-    font-weight: 600;
-}
-
-h5{
-    font-size: 1rem;
-    font-weight: 400;
-}
-
-h6{
-   color:var(--color-gray);
-}
-
-button{
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 0.8rem;
-    font-weight: 900;
-    outline: none;
-    border: none;
-    background-color: var(--color-black);
-    color: var(--color-white);
-    padding: 13px 30px;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: 0.5s ease;
-}
-button:hover{
-    background-color: var(--color-primary);
-
-}
-.navbar{
-    font-size:  16px;
-    padding-top: 2rem !important;
-    padding-bottom: 2rem !important;
-    top: 0;
-    left: 0;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-}
-
-.navbar-light .navbar-nav .nav-link{
-    padding: 0 20px;
-    color: var(--color-black);
-    transition: 0.4s ease;
-} 
-.navbar i{
-    color: var(--color-primary);
-}
-
-.navbar-light .navbar-nav .nav-link:hover,
-.navbar i:hover,
-.navbar-light .navbar-nav .nav-link.active,
-.navbar i:hover {
-    color: var(--color-dark)
-}
-
-.navbar-nav .nav-item{
-    display: flex;
-    align-items: center;
-}
-.navbar-nav .nav-item .fa-solid:hover {
-    color: var(--color-black)
-}
-.navbar i {
-    font-size: 1.2rem;
-    padding: 0 0.7px;
-    transition: 0.4s ease;
-    cursor: pointer;
-    margin-left: 5px;
-}
-@media only screen and (max-width: 990px) {
-    .nav-buttons{
-        margin: 10px;
-    }
-    
-    .nav-buttons ul{
-        margin: 1rem;
-        justify-content: flex-start;
-        align-items: flex-start;
-        text-align: left;
-    }
-
-    .nav-buttons ul .fa-solid{
-        margin: 20px 5px 10px 20px;
-    }
-}
-
-
-.logo{
-    width: 40px;
-    height: 40px;
-}
-
-.logo:hover {
-    transform: rotate(360deg) scale(1.5); /* Aplicando ambas as transformações ao mesmo tempo */
-    transition: transform 0.7s ease-in-out; /* Aplicando a transição apenas para a transformação */
-}
-/* login */
+/* Login page */
 .container-login {
     position: relative;
     width: 70vw;
@@ -198,7 +77,7 @@ form.sign-up-form {
     transition-delay: 1s;
 }
 .title {
-    font-size: 35px;
+  
     color: black;
     margin-bottom: 10px;
 }
@@ -241,7 +120,7 @@ form.sign-up-form {
     flex: 1;
     text-align: center;
     color: #666;
-    font-size: 18px;
+    
 }
 .input-field input {
     flex: 5;
@@ -272,11 +151,11 @@ form.sign-up-form {
 }
 
 .btn {
-    width: 160px;
+    width: 150px;
     height: 50px;
     border: none;
     border-radius: 50px;
-    background: var(--color-dark);
+    background-color: var(--color-dark);
     color: #fff;
     font-weight: 600;
     margin: 10px 0;
