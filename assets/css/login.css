@@ -10,7 +10,8 @@
     --color-secondary: #ebaabd;
     --color-dark: #F53377 ;
     --color-white: #ffffff;
-    --linear-grad: linear-gradient(90deg, var(--color-dark), var(--color-secondary));
+    --linear-grad: linear-gradient(90deg, var
+                                   (--color-dark), var(--color-secondary));
 }
 html{
     overflow: hidden;
@@ -148,7 +149,7 @@ form.sign-up-form {
 }
 
 .btn {
-    width: 150px;
+    width: 160px;
     height: 50px;
     border: none;
     border-radius: 50px;
