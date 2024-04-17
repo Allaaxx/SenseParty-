@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>Checkout</title>
+  </head>
+  <body>
+    <form action="/create-checkout-session" method="POST">
+      <button type="submit">Pay</button>
+    </form>
+
+    <form action="/session-payments.php" method="POST">
+      <button type="submit">Checkout</button>
+    </form>
+
+    <form action="product-create.php" method="post">
+      
+      <input type="text" name="name" placeholder="Nome do Produto">
+      <input type="text" name="price" placeholder="Preço do Produto">
+      <button type="submit">Create product</button>
+    </form>
+  </body>
+</html>
