@@ -2672,6 +2672,10 @@ td.product-remove a {
   color: var(--color-black2);
 }
 
+.product{
+  border: none;
+}
+
 .total-section table.total-table {
   border: 1px solid #efefef;
   width: 100%;
