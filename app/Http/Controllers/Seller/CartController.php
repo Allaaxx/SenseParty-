@@ -37,11 +37,14 @@ class CartController extends Controller
     ]);
 }
 
-    public function index()
-    {
-        $cart = session()->get('cart', []);
-        return view('cart.index', compact('cart'));
-    }
+public function index()
+{
+    $cart = session()->get('cart', []);
+    $cartCount = count($cart); 
+
+    return view('cart.index', compact('cart', 'cartCount'));
+}
+
 
     public function checkout(Request $request)
     {
