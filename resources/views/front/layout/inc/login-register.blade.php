@@ -6,19 +6,15 @@
                 </h2>
                 <div class="input-field">
                     <i class="fas fa-user"></i>
-                    <input type="text" placeholder="Usuário  ou  E-mail">
+                    <input type="text" placeholder="Usuário  ou  E-mail" required>
                     <label></label>
                 </div>
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
-                    <input type="password" placeholder="Senha">
+                    <input type="password" placeholder="Senha" required>
                     <label></label>
                 </div>
-                <div class="input-field">
-                    <i class="fas fa-lock"></i>
-                    <input type="password" placeholder="Confirmar senha">
-                    <label></label>
-                </div>
+                
                 <input type="submit" value="Conectar-se" class="btn">
                 <p class="social-text">Ou inicie com sua plataforma Social</p>
                 <div class="social-media">
@@ -41,20 +37,24 @@
                 <h2 class="title">Inscreva-se</h2>
                 <div class="input-field">
                     <i class="fas fa-user"></i>
-                    <input type="text" placeholder="Usuário">
+                    <input type="text" placeholder="Usuário" required>
                     <label></label>
                 </div>
                 <div class="input-field">
                     <i class="fas fa-envelope"></i>
-                    <input type="text" placeholder="E-mail">
+                    <input type="text" placeholder="E-mail" required>
                     <label></label>
                 </div>
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
-                    <input type="password" placeholder="Senha">
+                    <input type="password" placeholder="Senha" required>
                     <label></label>
                 </div>
-                
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Confirmar senha" required>
+                    <label></label>
+                </div>
                 <input type="submit" value="Inscrever-se" class="btn">
                 <p class="social-text">Ou inicie com sua plataforma Social</p>
                 <div class="social-media">

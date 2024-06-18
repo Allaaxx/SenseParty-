@@ -1001,7 +1001,7 @@ th:last-child{
 <body>
 
     <!-- header -->
-    @include('front.layout.inc.header')
+    {{-- @include('front.layout.inc.header') --}}
 
     <!-- search area -->
     @include('front.layout.inc.search-area')

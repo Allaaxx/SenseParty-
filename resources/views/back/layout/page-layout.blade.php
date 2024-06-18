@@ -66,13 +66,13 @@
 <body>
     <div class="header">
         <div class="header-left">
-            <div class="menu-icon bi bi-list"></div>
-            <div class="search-toggle-icon bi bi-search" data-toggle="header_search"></div>
-            <div class="header-search">
+            {{-- <div class="menu-icon bi bi-list"></div>
+            <div class="search-toggle-icon bi bi-search" data-toggle="header_search"></div> --}}
+            {{-- <div class="header-search">
                 <form>
                     <div class="form-group mb-0">
                         <i class="dw dw-search2 search-icon"></i>
-                        <input type="text" class="form-control search-input" placeholder="Search Here" />
+                        <input type="text" class="form-control search-input" placeholder="Pesquise aqui " />
                         <div class="dropdown">
                             <a class="dropdown-toggle no-arrow" href="#" role="button" data-toggle="dropdown">
                                 <i class="ion-arrow-down-c"></i>
@@ -103,7 +103,7 @@
                         </div>
                     </div>
                 </form>
-            </div>
+            </div> --}}
         </div>
         <div class="header-right">
             <div class="dashboard-setting user-notification">
@@ -330,11 +330,11 @@
                             </a>
                         </li>
 
-                        <li>
-                            <a href="invoice.html" class="dropdown-toggle no-arrow">
-                                <span class="micon bi bi-receipt-cutoff"></span><span class="mtext">fatura</span>
-                            </a>
-                        </li>
+                            {{-- <li>
+                                <a href="invoice.html" class="dropdown-toggle no-arrow">
+                                    <span class="micon bi bi-receipt-cutoff"></span><span class="mtext">fatura</span>
+                                </a>
+                            </li> --}}
                         <li>
                             <div class="dropdown-divider"></div>
                         </li>
