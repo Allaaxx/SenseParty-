@@ -64,11 +64,6 @@
               </li>
               <li><a href="{{ route('contact-page')}}">Contato</a></li>
               <li><a href="{{ route('shop-page') }}">Loja</a></li>
-<<<<<<< HEAD
-=======
-
-              
->>>>>>> 344fd5257fc417cc6e5193c9f984436e327d90af
                 
               </li>
               <li>
@@ -79,16 +74,8 @@
                       <i class="fas fa-shopping-cart"></i>
                       <span class="fa-layers-counter cart-counter">0</span>
                     </span>
-<<<<<<< HEAD
                   </a>
                   <a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
-=======
-                    <li><a href="{{ route('client.login-register') }}">Login</a></li>
-
-                  </a>
-                  
-                  
->>>>>>> 344fd5257fc417cc6e5193c9f984436e327d90af
                 </div>
               </li>
               
