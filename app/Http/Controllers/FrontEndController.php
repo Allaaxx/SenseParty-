@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class FrontEndController extends Controller
@@ -12,5 +13,43 @@ class FrontEndController extends Controller
         ];
         return view('front.pages.home', $data);
 
+    }
+
+    public function shopPage(Request $request , Product $product){
+        $produtos  = Product::all();
+
+        $produtosPaginados = Product::paginate(4);
+
+        $data = [
+            'pageTitle' => 'Loja'
+        ];
+        return view('front.pages.shop', $data, compact('produtos', 'produtosPaginados','product'));
+    }
+
+
+    public function singleProduct(Request $request, $id, Product $product){
+
+        $single_produto  = Product::find($id);
+
+        if (!$single_produto) {
+            return redirect()->route('shop')->with('error', 'Produto não encontrado.');
+        }
+
+
+        $produtoPagSingle = Product::paginate(4);
+
+        $data = [
+            'pageTitle' => $single_produto->name,
+            'produtoPagSingle' => $produtoPagSingle
+        ];
+
+        return view('front.pages.single_product', $data,  compact('single_produto'));
+    }
+
+    public function contactPage(Request $request){
+        $data = [
+            'pageTitle' => 'Contato'
+        ];
+        return view('front.pages.contact', $data);
     }
 }

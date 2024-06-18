@@ -6,7 +6,7 @@
         <div class="main-menu-wrap">
           <!-- logo -->
           <div class="site-logo">
-            <a href="index.html">
+            <a href="{{ route('home-page') }}">
               <img style="max-height: 64px" src="/images/site/{{ get_settings()->site_favicon }}" alt="">
             </a>
           </div>
@@ -15,27 +15,8 @@
           <!-- menu start -->
           <nav class="main-menu">
             <ul>
-              <li class="current-list-item"><a href="#">Home</a>
-                <ul class="sub-menu">
-                  <li><a href="index.html">Static Home</a></li>
-                  <li><a href="index_2.html">Slider Home</a></li>
-                </ul>
-              </li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="#">Pages</a>
-                <ul class="sub-menu">
-                  <li>
-                  <li><a href="#">Pages</a></li>
-                  <li><a href="about.html">About</a></li>
-                  <li><a href="cart.html">Cart</a></li>
-                  <li><a href="checkout.html">Check Out</a></li>
-                  <li><a href="contact.html">Contact</a></li>
-                  <li><a href="news.html">News</a></li>
-                  <li><a href="shop.html">Shop</a></li>
-                </ul>
-              </li>
-
-              <li ><a href="#">Categories</a>
+              <li class="current-list-item"><a href="{{ route('home-page') }}">Início</a></li>
+              <li><a href="#">Categorias</a>
                 @if (count(get_categories()) > 0)
                 @foreach  (get_categories() as $category)
                     
@@ -81,18 +62,19 @@
                 @endforeach
                 @endif
               </li>
-              <li><a href="contact.html">Contact</a></li>
-              <li><a href="shop.html">Shop</a>
-                <ul class="sub-menu">
-                  <li><a href="shop.html">Shop</a></li>
-                  <li><a href="checkout.html">Check Out</a></li>
-                  <li><a href="single-product.html">Single Product</a></li>
-                  <li><a href="cart.html">Cart</a></li>
-                </ul>
+              <li><a href="{{ route('contact-page')}}">Contato</a></li>
+              <li><a href="{{ route('shop-page') }}">Loja</a></li>
+                
               </li>
               <li>
                 <div class="header-icons">
-                  <a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+                  <!-- Ícone do Carrinho com Contador -->
+                  <a class="shopping-cart" href="{{ route('cart.index')}}">
+                    <span class="fa-layers fa-fw">
+                      <i class="fas fa-shopping-cart"></i>
+                      <span class="fa-layers-counter cart-counter">0</span>
+                    </span>
+                  </a>
                   <a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
                 </div>
               </li>
@@ -107,3 +89,25 @@
   </div>
 </div>
 <!-- end header -->
+
+<!-- JavaScript para atualizar dinamicamente o contador do carrinho -->
+@push('scripts')
+<script>
+  // Função para atualizar o contador de itens no carrinho
+  function updateCartCounter(count) {
+    var cartCounter = document.querySelector('.cart-counter');
+    if (cartCounter) {
+      cartCounter.textContent = count;
+      cartCounter.style.display = count > 0 ? 'inline-block' : 'none'; // Exibe o contador apenas se houver itens no carrinho
+    }
+  }
+
+  // Chamada inicial para exibir o número atual de itens no carrinho
+  updateCartCounter({{ count(session('cart', [])) }});
+
+  // Exemplo de como você pode atualizar o contador após adicionar/remover itens
+  // Aqui você deve implementar a lógica real para atualizar dinamicamente
+  // o contador baseado nas interações do usuário
+
+</script>
+@endpush

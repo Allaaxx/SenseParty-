@@ -185,7 +185,7 @@ class SellerController extends Controller
 
     public function sendResetPasswordLink(Request $request)
     {
-        //validate the form
+        // Validate the form
         $request->validate([
             'email' => 'required|email|exists:sellers,email'
         ], [
@@ -193,19 +193,20 @@ class SellerController extends Controller
             'email.email' => 'E-mail inválido',
             'email.exists' => 'E-mail não encontrado'
         ]);
-
-        //get seller details
+    
+        // Get seller details
         $seller = Seller::where('email', $request->email)->first();
-
-        //generate reset token
+    
+        // Generate reset token
         $token = base64_encode(Str::random(64));
-
-        //check if there is an exisiting token reset password
+    
+        // Check if there is an existing token reset password
         $oldToken = DB::table('password_reset_tokens')
             ->where(['email' => $seller->email, 'guard' => constGuards::SELLER])
             ->first();
+    
         if ($oldToken) {
-            // update existing token
+            // Update existing token
             DB::table('password_reset_tokens')
                 ->where(['email' => $seller->email, 'guard' => constGuards::SELLER])
                 ->update([
@@ -213,7 +214,7 @@ class SellerController extends Controller
                     'created_at' => Carbon::now()
                 ]);
         } else {
-            //create new token
+            // Create new token
             DB::table('password_reset_tokens')
                 ->insert([
                     'email' => $seller->email,
@@ -222,13 +223,13 @@ class SellerController extends Controller
                     'created_at' => Carbon::now()
                 ]);
         }
-
+    
         $actionLink = route('seller.reset-password', ['token' => $token, 'email' => urlencode($seller->email)]);
-
+    
         $data['action_link'] = $actionLink;
         $data['seller'] = $seller;
         $mail_body = view('email-templates.seller-forgot-email-template', $data)->render();
-
+    
         $mailConfig = array(
             'mail_from_email' => env('EMAIL_FROM_ADDRESS'),
             'mail_from_name' => env('EMAIL_FROM_NAME'),
@@ -237,13 +238,14 @@ class SellerController extends Controller
             'mail_subject' => 'Redefinir senha',
             'mail_body' => $mail_body
         );
-
+    
         if (sendEmail($mailConfig)) {
             return redirect()->route('seller.forgot-password')->with('success', 'Link de redefinição de senha enviado para seu e-mail');
         } else {
             return redirect()->route('seller.forgot-password')->with('fail', 'Erro ao enviar link de redefinição de senha');
         }
-    } //end method
+    }
+    
 
     public function showResetForm(Request $request, $token = null)
     {

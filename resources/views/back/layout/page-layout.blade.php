@@ -5,22 +5,37 @@
     <!-- Basic Page Info -->
     <meta charset="utf-8" />
     <title>@yield('pageTitle')</title>
-
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
     <link rel="icon" type="image/png" sizes="16x16" href="/images/site/{{ get_settings()->site_favicon }}" />
 
     <!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
     <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="/back/vendors/styles/core.css" />
     <link rel="stylesheet" type="text/css" href="/back/vendors/styles/icon-font.min.css" />
     <link rel="stylesheet" type="text/css" href="/back/vendors/styles/style.css" />
 
+    <!-- Ijabo -->
+    <link rel="stylesheet" href="/extra-assets/ijabo/ijabo.min.css">
+    <link rel="stylesheet" href="/extra-assets/ijaboCropTool/ijaboCropTool.min.css">
+
+    <!-- jQuery UI -->
+    <link rel="stylesheet" href="/extra-assets/jquery-ui-1.13.2/jquery-ui.min.css">
+    <link rel="stylesheet" href="/extra-assets/jquery-ui-1.13.2/jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="/extra-assets/jquery-ui-1.13.2/jquery-ui.theme.min.css">
+
+    <!-- Summernote -->
+    <link rel="stylesheet" href="/extra-assets/summernote/summernote-bs4.min.css">
+
+    <!-- Livewire Styles -->
+    @livewireStyles()
+
+    <!-- Stylesheets Stack -->
+    @stack('stylesheets')
 
     <script>
         (function(w, d, s, l, i) {
@@ -38,14 +53,6 @@
         })(window, document, "script", "dataLayer", "GTM-NXZMQSS");
     </script>
     <!-- End Google Tag Manager -->
-
-    <link rel="stylesheet" href="/extra-assets/ijabo/ijabo.min.css">
-    <link rel="stylesheet" href="/extra-assets/ijaboCropTool/ijaboCropTool.min.css">
-
-    <link rel="stylesheet" href="/extra-assets/jquery-ui-1.13.2/jquery-ui.min.css">
-    <link rel="stylesheet" href="/extra-assets/jquery-ui-1.13.2/jquery-ui.structure.min.css">
-    <link rel="stylesheet" href="/extra-assets/jquery-ui-1.13.2/jquery-ui.theme.min.css">
-    <link rel="stylesheet" href="/extra-assets/summernote/summernote-bs4.min.css">
     <style>
         .swal2-popup {
             font-size: 0.78em;
@@ -372,7 +379,7 @@
 							</a>
 							<ul class="submenu">
 								<li><a href="{{ route('seller.product.all-products')}}" 
-                                class="{{ Route::is('seller.product.all-product') ? 
+                                class="{{ Route::is('seller.product.all-products') ? 
                                 'active' : '' }}">All Products</a></li>
 								<li><a href="{{ route('seller.product.add-product')}}" class="{{ Route::is('seller.product.add-product') ? 'active' : ''}}">Add Product</a></li>
 							</ul>
@@ -473,5 +480,4 @@
     @livewireScripts
     @stack('scripts')
 </body>
-
 </html>

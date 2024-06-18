@@ -5,7 +5,8 @@
 
 {{-- content --}}
 
+@include('front.layout.inc.shop')
+
+
 
 @endsection
-
-

@@ -3,9 +3,10 @@
 @section('content')
 
 
-{{-- content --}}
+<div class="container">
+    <h2>Payment Canceled</h2>
+    <p>Your payment has been canceled.</p>
+</div>
 
 
 @endsection
-
-

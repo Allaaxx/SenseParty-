@@ -8,4 +8,5 @@
 @include('front.layout.inc.home')
 
 meu pintinho
+
 @endsection
