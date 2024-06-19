@@ -87,20 +87,13 @@
                             </tr>
                         </tbody>
                     </table>
-                    <form action="{{ route('checkout') }}" method="POST">
-                        @csrf
-                        <button type="submit" class="boxed-btn black">Check Out</button>
+                    <form method="GET" action="{{ route('checkout') }}">
+                        @csrf <!-- Adiciona o token CSRF -->
+                        <!-- Outros campos do formulário aqui -->
+                        <button type="submit" class="btn btn-primary">Checkout com Stripe</button>
                     </form>
-                </div>
-
-                <div class="coupon-section">
-                    <h3>Apply Coupon</h3>
-                    <div class="coupon-form-wrap">
-                        <form action="index.html">
-                            <p><input type="text" placeholder="Coupon"></p>
-                            <p><input type="submit" value="Apply"></p>
-                        </form>
-                    </div>
+                    
+                    
                 </div>
             </div>
         </div>
