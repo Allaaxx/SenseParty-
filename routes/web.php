@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontEndController;
+use App\Http\Controllers\Seller\CartController;
+use App\Http\Controllers\Seller\ProductController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,15 +16,27 @@ use App\Http\Controllers\FrontEndController;
 |
 */
 
-Route::controller(FrontEndController::class)->group(function(){
+Route::controller(FrontEndController::class)->group(function () {
     Route::get('/', 'homePage')->name('home-page');
-    Route::get('/about', 'about');
-    Route::get('/services', 'services');
-    Route::get('/contact', 'contact');
+    Route::get('/shop', 'shopPage')->name('shop-page');
+    Route::get('/single-product/{id}', 'singleProduct')->name('single-product');
+    Route::get('/contact', 'contactPage')->name('contact-page');
 });
 
+Route::resource('products', ProductController::class);
+
+Route::prefix('seller')->group(function() {
+    Route::get('cart', [CartController::class, 'index'])->name('cart.index');
+    Route::post('cart', [CartController::class, 'addToCart'])->name('cart.add');
+    Route::post('seller/cart/remove/{id}', [CartController::class, 'removeFromCart'])->name('cart.remove');
 
 
-Route::view('/example-page','example-page');
+
+    Route::post('checkout', [CartController::class, 'checkout'])->name('checkout');
+    Route::get('success', [CartController::class, 'success'])->name('success');
+    Route::get('cancel', [CartController::class, 'cancel'])->name('cancel');
+});
+
+Route::view('/example-page', 'example-page');
 Route::view('/example-auth', 'example-auth');
 Route::view('example-frontend', 'example-frontend');

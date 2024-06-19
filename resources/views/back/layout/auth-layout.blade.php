@@ -19,7 +19,7 @@
     <link rel="stylesheet" type="text/css" href="/back/vendors/styles/core.css" />
     <link rel="stylesheet" type="text/css" href="/back/vendors/styles/icon-font.min.css" />
     <link rel="stylesheet" type="text/css" href="/back/vendors/styles/style.css" />
-   
+
     <link rel="stylesheet" href="/extra-assets/ijabo/ijabo.min.css">
     @livewireStyles
     @stack('stylesheets')
@@ -39,13 +39,13 @@
 
                         @if (Route::is('seller.login'))
                         <li><a href="{{ route('seller.register') }}">Register</a></li>
-                        
+
                         @else
-                        <li><a href="{{ route('seller.login') }}">Login</a></li>   
+                        <li><a href="{{ route('seller.login') }}">Login</a></li>
                         @endif
                     @endif
-                    
-                    
+
+
 
                 </ul>
             </div>
@@ -83,17 +83,18 @@
     <script src="/extra-assets/ijabo/jquery.ijaboViewer.min.js"></script>
     <script src="/extra-assets/ijaboCropTool/ijaboCropTool.min.js"></script>
     <script>
-        window.addEventListener('showToastr', function(event){ 
+        window.addEventListener('showToastr', function(event){
            toastr.remove();
             if(event.detail[0].type === 'info'){ toastr.info(event.detail[0].message);}
             else if(event.detail[0].type === 'success'){toastr.success(event.detail[0].message);}
             else if(event.detail[0].type === 'error'){toastr.error(event.detail[0].message);}
             else if(event.detail[0].type === 'warning'){toastr.warning(event.detail[0].message);}
-            else{return false; }     
+            else{return false; }
         });
     </script>
     @stack('scripts')
     @livewireScripts
+
 </body>
 
 </html>

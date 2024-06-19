@@ -5,22 +5,37 @@
     <!-- Basic Page Info -->
     <meta charset="utf-8" />
     <title>@yield('pageTitle')</title>
-
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
     <link rel="icon" type="image/png" sizes="16x16" href="/images/site/{{ get_settings()->site_favicon }}" />
 
     <!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
     <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="/back/vendors/styles/core.css" />
     <link rel="stylesheet" type="text/css" href="/back/vendors/styles/icon-font.min.css" />
     <link rel="stylesheet" type="text/css" href="/back/vendors/styles/style.css" />
 
+    <!-- Ijabo -->
+    <link rel="stylesheet" href="/extra-assets/ijabo/ijabo.min.css">
+    <link rel="stylesheet" href="/extra-assets/ijaboCropTool/ijaboCropTool.min.css">
+
+    <!-- jQuery UI -->
+    <link rel="stylesheet" href="/extra-assets/jquery-ui-1.13.2/jquery-ui.min.css">
+    <link rel="stylesheet" href="/extra-assets/jquery-ui-1.13.2/jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="/extra-assets/jquery-ui-1.13.2/jquery-ui.theme.min.css">
+
+    <!-- Summernote -->
+    <link rel="stylesheet" href="/extra-assets/summernote/summernote-bs4.min.css">
+
+    <!-- Livewire Styles -->
+    @livewireStyles()
+
+    <!-- Stylesheets Stack -->
+    @stack('stylesheets')
 
     <script>
         (function(w, d, s, l, i) {
@@ -38,14 +53,6 @@
         })(window, document, "script", "dataLayer", "GTM-NXZMQSS");
     </script>
     <!-- End Google Tag Manager -->
-
-    <link rel="stylesheet" href="/extra-assets/ijabo/ijabo.min.css">
-    <link rel="stylesheet" href="/extra-assets/ijaboCropTool/ijaboCropTool.min.css">
-
-    <link rel="stylesheet" href="/extra-assets/jquery-ui-1.13.2/jquery-ui.min.css">
-    <link rel="stylesheet" href="/extra-assets/jquery-ui-1.13.2/jquery-ui.structure.min.css">
-    <link rel="stylesheet" href="/extra-assets/jquery-ui-1.13.2/jquery-ui.theme.min.css">
-    <link rel="stylesheet" href="/extra-assets/summernote/summernote-bs4.min.css">
     <style>
         .swal2-popup {
             font-size: 0.78em;
@@ -59,13 +66,13 @@
 <body>
     <div class="header">
         <div class="header-left">
-            <div class="menu-icon bi bi-list"></div>
-            <div class="search-toggle-icon bi bi-search" data-toggle="header_search"></div>
-            <div class="header-search">
+            {{-- <div class="menu-icon bi bi-list"></div>
+            <div class="search-toggle-icon bi bi-search" data-toggle="header_search"></div> --}}
+            {{-- <div class="header-search">
                 <form>
                     <div class="form-group mb-0">
                         <i class="dw dw-search2 search-icon"></i>
-                        <input type="text" class="form-control search-input" placeholder="Search Here" />
+                        <input type="text" class="form-control search-input" placeholder="Pesquise aqui " />
                         <div class="dropdown">
                             <a class="dropdown-toggle no-arrow" href="#" role="button" data-toggle="dropdown">
                                 <i class="ion-arrow-down-c"></i>
@@ -96,7 +103,7 @@
                         </div>
                     </div>
                 </form>
-            </div>
+            </div> --}}
         </div>
         <div class="header-right">
             <div class="dashboard-setting user-notification">
@@ -323,11 +330,11 @@
                             </a>
                         </li>
 
-                        <li>
-                            <a href="invoice.html" class="dropdown-toggle no-arrow">
-                                <span class="micon bi bi-receipt-cutoff"></span><span class="mtext">fatura</span>
-                            </a>
-                        </li>
+                            {{-- <li>
+                                <a href="invoice.html" class="dropdown-toggle no-arrow">
+                                    <span class="micon bi bi-receipt-cutoff"></span><span class="mtext">fatura</span>
+                                </a>
+                            </li> --}}
                         <li>
                             <div class="dropdown-divider"></div>
                         </li>
@@ -372,7 +379,7 @@
 							</a>
 							<ul class="submenu">
 								<li><a href="{{ route('seller.product.all-products')}}" 
-                                class="{{ Route::is('seller.product.all-product') ? 
+                                class="{{ Route::is('seller.product.all-products') ? 
                                 'active' : '' }}">All Products</a></li>
 								<li><a href="{{ route('seller.product.add-product')}}" class="{{ Route::is('seller.product.add-product') ? 'active' : ''}}">Add Product</a></li>
 							</ul>
@@ -473,5 +480,4 @@
     @livewireScripts
     @stack('scripts')
 </body>
-
 </html>
