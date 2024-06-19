@@ -62,7 +62,11 @@
                   <a class="shopping-cart" href="{{ route('cart.index') }}">
                     <span class="fa-layers fa-fw">
                       <i class="fas fa-shopping-cart"></i>
+<<<<<<< HEAD
                       <span class="fa-layers-counter cart-counter"> {{ $cartCount }}</span>
+=======
+                      <span class="fa-layers-counter cart-counter">{{ $cartCount }}</span>
+>>>>>>> 836bf420519c6c75180c36d88305a8f69704ea5c
                     </span>
                   </a>
                   <a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
