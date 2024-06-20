@@ -10,6 +10,7 @@ class StripeController extends Controller
 {
     public function session(Request $request)
     {
+        $cartCount = session()->has('cart') ? count(session('cart')) : 0;
         // Configura a chave secreta do Stripe
         Stripe::setApiKey(config('stripe.sk'));
 
@@ -47,11 +48,23 @@ class StripeController extends Controller
 
     public function success()
     {
-        return "Obrigado pelo seu pedido. O pagamento foi concluído com sucesso!";
+        $cartCount = session()->has('cart') ? count(session('cart')) : 0;
+
+        $data = [
+            'pageTitle' => 'Pedido Concluido',
+            'cartCount' => $cartCount,
+        ];
+        return view('cart.success', $data);
     }
 
     public function cancel()
     {
-        return view('cancel');
+        $cartCount = session()->has('cart') ? count(session('cart')) : 0;
+
+        $data = [
+            'pageTitle' => 'Pedido Cancelado',
+            'cartCount' => $cartCount,
+        ];
+        return view('cart.cancel', $data);
     }
 }
