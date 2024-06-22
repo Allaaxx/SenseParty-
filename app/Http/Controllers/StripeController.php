@@ -57,7 +57,6 @@ class StripeController extends Controller
 
         session()->forget('cart');
         return view('cart.success', $data);
-        
     }
 
     public function cancel()
