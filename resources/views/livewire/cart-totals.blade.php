@@ -26,11 +26,12 @@
                 </tr>
                 <tr class="total-data">
                     <td colspan="2">
-                        <div class="d-flex justify-content-center">
+                        <div class="d-flex justify-content-center mt-3">
                             <form method="GET" action="{{ route('checkout') }}" style="background-color: black;">
                                 @csrf <!-- Adiciona o token CSRF -->
                                 <!-- Outros campos do formulário aqui -->
-                                <button type="submit" >Finalizar Compra</button>
+                                
+                                <button type="submit">Confirmar Pagamento</button>
                             </form>
                         </div>
                     </td>

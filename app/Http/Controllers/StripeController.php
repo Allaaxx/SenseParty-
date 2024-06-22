@@ -33,6 +33,21 @@ class StripeController extends Controller
             ];
         }
 
+        // Adiciona o frete como um item separado, se existir
+        $shippingCost = $request->input('shippingCost', 100); // Obtem o valor do frete do request
+        if ($shippingCost > 0) {
+            $productItems[] = [
+                'price_data' => [
+                    'product_data' => [
+                        'name' => 'Frete',
+                    ],
+                    'currency' => 'BRL',
+                    'unit_amount' => $shippingCost * 100, // Converte para centavos
+                ],
+                'quantity' => 1,
+            ];
+        }
+
         // Cria a sessão de checkout no Stripe
         $checkoutSession = Session::create([
             'payment_method_types' => ['card'],

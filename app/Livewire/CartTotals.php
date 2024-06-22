@@ -16,7 +16,7 @@ class CartTotals extends Component
         $cartItems = Cart::content();
 
         $subtotal = 0; // Inicializa a variável $subtotal
-        $shippingCost = 45; // Custo fixo do frete
+        $shippingCost = 100; 
 
         foreach ($cartItems as $cartItem) {
             // Calcula o subtotal de cada item (preço * quantidade)
