@@ -54,7 +54,10 @@ class StripeController extends Controller
             'pageTitle' => 'Pedido Concluido',
             'cartCount' => $cartCount,
         ];
+
+        session()->forget('cart');
         return view('cart.success', $data);
+        
     }
 
     public function cancel()
