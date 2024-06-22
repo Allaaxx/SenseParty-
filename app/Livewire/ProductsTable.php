@@ -14,7 +14,9 @@ class ProductsTable extends Component
        Cart::remove($rowId);
 
        // Atualizar a tabela de produtos após a remoção
-       $this->dispatchEventBrowser('cartUpdated');
+       $this->dispatch('cart_updated');
+
+       
     }
 
     public function render()

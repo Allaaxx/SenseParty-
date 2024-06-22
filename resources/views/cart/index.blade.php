@@ -8,8 +8,10 @@
             <div class="row">
                 <div class="col-lg-8 offset-lg-2 text-center">
                     <div class="breadcrumb-text">
-                        <p>Fresh and Organic</p>
-                        <h1>Cart</h1>
+                            <p>seu</p>
+                        <h1>Carrinho</h1>
+                            
+                        
                     </div>
                 </div>
             </div>
@@ -78,18 +80,38 @@
 @push('scripts')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script>
-        // Configuração padrão do Toastr
-        toastr.options = {
-            closeButton: true,
-            progressBar: true,
-            positionClass: 'toast-top-right',
-            preventDuplicates: true,
-            timeOut: 3000 // Tempo padrão de exibição (3 segundos)
-        };
+        $(document).ready(function() {
+            // Função para exibir notificações Toastr
+            function showToastr(type, message) {
+                toastr.remove();
+                toastr[type](message);
+            }
 
-        // Função para exibir notificações Toastr
-        function showToastr(type, message) {
-            toastr[type](message);
-        }
+            // Manipula o envio do formulário de adicionar ao carrinho
+            $('#addToCartForm').submit(function(e) {
+                e.preventDefault();
+                var form = $(this);
+                var url = form.attr('action');
+
+                $.ajax({
+                    url: url,
+                    type: 'POST',
+                    data: form.serialize(),
+                    dataType: 'json',
+                    success: function(response) {
+                        if (response.success) {
+                            showToastr('success', response.message);
+                            // Aqui você pode adicionar lógica adicional após o sucesso da adição, se necessário
+                        } else {
+                            showToastr('error', response.message);
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(xhr.responseText);
+                        showToastr('error', 'Erro ao adicionar o produto ao carrinho. Por favor, tente novamente.');
+                    }
+                });
+            });
+        });
     </script>
 @endpush

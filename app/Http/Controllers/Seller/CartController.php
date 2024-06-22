@@ -10,8 +10,7 @@ use Gloudemans\Shoppingcart\Facades\Cart;
 class CartController extends Controller
 {
 
-    public function addToCart(Request $request)
-    {
+    public function addToCart(Request $request){
         return response()->json([
             'success' => true,
             'message' => 'Produto adicionado ao carrinho com sucesso!',
@@ -24,6 +23,7 @@ class CartController extends Controller
             'message' => 'Produto removido do carrinho com sucesso!',
         ]);
     }
+
     public function index()
     {
         // Recupera os itens do carrinho

@@ -18,7 +18,7 @@
                 @endphp
                 <tr class="table-body-row">
                     <td class="product-remove">
-                        <form wire:submit.prevent="removeFromCart('{{ $cartItem->rowId }}')" class="remove-from-cart-form" method="POST">
+                        <form wire:submit.prevent="removeFromCart('{{ $cartItem->rowId }}')" class="remove-from-cart-form" method="POST" action="{{ route('cart.remove') }}">
                             @csrf
                             <input type="hidden" name="rowId" value="{{ $cartItem->rowId }}">
                             <button type="submit" class="btn"><i class="far fa-window-close"></i></button>
