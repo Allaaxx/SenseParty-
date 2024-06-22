@@ -8,6 +8,9 @@
 @include('front.layout.inc.single_product')
 
 
+{{-- Related Products --}}
+
+
 <!-- Scripts específicos da página -->
 @push('scripts')
     <script>

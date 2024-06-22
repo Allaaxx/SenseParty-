@@ -2,26 +2,20 @@
 
 namespace App\Livewire;
 
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Livewire\Component;
 
 class CartCounter extends Component
 {
-    public $cartCount;
 
-    protected $listeners = ['cartUpdated' => 'updateCartCount'];
-
-    public function mount()
-    {
-        $this->updateCartCount();
-    }
-
-    public function updateCartCount()
-    {
-        $this->cartCount = count(session('cart', []));
-    }
+    protected $listeners = ['cart_updated' => 'render'];
 
     public function render()
     {
-        return view('livewire.cart-counter');
+        $cart_count = Cart::content()->count();
+
+        return view('livewire.cart-counter', compact('cart_count'));
     }
+
+    
 }

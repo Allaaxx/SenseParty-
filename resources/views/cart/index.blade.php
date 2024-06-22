@@ -21,58 +21,10 @@
             <div class="row">
                 <div class="col-lg-8 col-md-12">
                     <div class="cart-table-wrap">
-                        <table class="cart-table">
-                            <thead class="cart-table-head">
-                                <tr class="table-head-row">
-                                    <th class="product-remove"></th>
-                                    <th class="product-image">Produto</th>
-                                    <th class="product-name">Nome</th>
-                                    <th class="product-price">Preço</th>
-                                    <th class="product-quantity">Quantidade</th>
-                                    <th class="product-total">Total</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @php
-                                    $total = 0;
-                                @endphp
-                                @forelse ($cartItems as $cartItem)
-                                    @php
-                                        $product = isset($products[$cartItem->id]) ? $products[$cartItem->id] : null;
-                                        $subtotal = $cartItem->price * $cartItem->qty;
-                                        $total += $subtotal;
-                                    @endphp
-                                    <tr class="table-body-row">
-                                        <td class="product-remove">
-                                            <form class="remove-from-cart-form"
-                                                  action="{{ route('cart.remove', ['id' => $cartItem->rowId]) }}" method="POST">
-                                                @csrf
-                                                <input type="hidden" name="product_id" value="{{ $cartItem->id }}">
-                                                <button type="submit" class="btn"><i class="far fa-window-close"></i></button>
-                                            </form>
-                                        </td>
-                                        <td class="product-image">
-                                            @if ($product && $product->product_image)
-                                                <img src="{{ asset('images/products/' . $product->product_image) }}" alt="{{ $product->name }}">
-                                            @else
-                                                <span>Imagem não disponível</span>
-                                            @endif
-                                        </td>
-                                        <td class="product-name">{{ $product ? $product->name : 'Produto não encontrado' }}</td>
-                                        <td class="product-price">$ {{ $cartItem->price }}</td>
-                                        <td class="product-quantity">{{ $cartItem->qty }}</td>
-                                        <td class="product-total">$ {{ $subtotal }}</td>
-                                    </tr>
-                                @empty
-                                    <tr class="table-body-row">
-                                        <td colspan="6">Seu carrinho está vazio!</td>
-                                    </tr>
-                                @endforelse
-                            </tbody>
-                        </table>
+                        @livewire('products-table')
+
                     </div>
                 </div>
-
                 <div class="col-lg-4">
                     <div class="total-section">
                         <table class="total-table">
@@ -83,6 +35,9 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @php
+                                    $total = 0; // Inicializa a variável $total
+                                @endphp
                                 @if (!$cartItems->isEmpty())
                                     <tr class="total-data">
                                         <td><strong>Subtotal: </strong></td>
@@ -94,21 +49,26 @@
                                     </tr>
                                     <tr class="total-data">
                                         <td><strong>Total: </strong></td>
-                                        <td>R$ {{ $total + 45 }}</td> <!-- Ajuste dinâmico conforme seu cálculo -->
+                                        <td>R$ {{ $total + 45 }}</td>
+                                        <!-- Ajuste dinâmico conforme seu cálculo -->
                                     </tr>
                                     <tr class="total-data">
                                         <td colspan="2">
                                             <form method="GET" action="{{ route('checkout') }}">
                                                 @csrf <!-- Adiciona o token CSRF -->
                                                 <!-- Outros campos do formulário aqui -->
-                                                <button type="submit" class="btn btn-primary">Checkout com Stripe</button>
+                                                <button type="submit" class="btn btn-primary">Checkout com
+                                                    Stripe</button>
                                             </form>
                                         </td>
                                     </tr>
                                 @endif
                             </tbody>
                         </table>
+
+
                     </div>
+                    
                 </div>
             </div>
         </div>
@@ -133,4 +93,3 @@
         }
     </script>
 @endpush
-

@@ -5,6 +5,9 @@ use App\Http\Controllers\FrontEndController;
 use App\Http\Controllers\Seller\CartController;
 use App\Http\Controllers\Seller\ProductController;
 use App\Http\Controllers\StripeController;
+use App\Livewire\SingleProduct;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +27,11 @@ Route::group(['prefix' => ''], function () {
     Route::get('/shop', [FrontEndController::class, 'shopPage'])->name('shop-page');
     Route::get('/single-product/{id}', [FrontEndController::class, 'singleProduct'])->name('single-product');
     Route::get('/contact', [FrontEndController::class, 'contactPage'])->name('contact-page');
+    Route::get('cart', [CartController::class, 'index'])->name('cart.index');
+    Route::post('/cart/add', [CartController::class, 'addToCart'])->name('cart.add');
+    Route::post('/cart/remove', [CartController::class, 'removeFromCart'])->name('cart.remove');
+
+
 });
 
 // Rotas para o ProductController
@@ -31,10 +39,6 @@ Route::resource('products', ProductController::class);
 
 // Rotas para o CartController
 Route::prefix('seller')->group(function () {
-    Route::get('cart', [CartController::class, 'index'])->name('cart.index');
-    Route::post('cart', [CartController::class, 'addToCart'])->name('cart.add');
-    Route::post('cart/remove/{id}', [CartController::class, 'removeFromCart'])->name('cart.remove');
-
     // Rotas para o StripeController
     Route::get('checkout', [StripeController::class, 'session'])->name('checkout');
     Route::get('success', [StripeController::class, 'success'])->name('success');

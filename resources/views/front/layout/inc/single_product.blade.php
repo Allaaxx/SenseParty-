@@ -32,29 +32,11 @@
             </div>
         </div>
 
-        <div class="col-lg-6 col-md-12 col-sm-12">
-            <h2>{{ $single_produto->name }}</h2>
-            <div class="breadcrumb-text">
-                <p style="margin-top: 80px ">Nome da loja</p>
-            </div>
-            <h3 class="py-4">R$ {{ $single_produto->price }}</h3>
+        @livewire('single-product', ['id' => $single_produto->id])
 
-            <form id="addToCartForm" action="{{ route('cart.add') }}" method="POST">
-                @csrf
-                <input type="hidden" name="product_id" value="{{ $single_produto->id }}">
-                <input type="number" name="quantity" value="1" min="1">
-                <button type="submit" class="buy-btn">Adicionar ao Carrinho</button>
-            </form>
-
-            <h4 class="my-5">Product details</h4>
-            <span>Os detalhes desse produto serão mostrados resumidamente
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit officia rerum veritatis perspiciatis nisi culpa maiores maxime eum, molestiae fuga consequuntur autem dolor fugiat nam vel repellat ea, quam optio?
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, repellat aspernatur. Possimus voluptate a harum, consequuntur nemo, quisquam debitis neque recusandae repellendus soluta accusamus hic consectetur, id nesciunt voluptatum sint?
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor, assumenda sed voluptatibus, adipisci id molestiae repellendus earum aliquid est ducimus enim nesciunt voluptates sit eos, ad optio delectus nisi laudantium.
-            </span>
-        </div>
     </div>
 </section>
+
 
 <!-- Related Products -->
 
