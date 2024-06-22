@@ -117,8 +117,7 @@
 	<script src="/front/assets/js/sticker.js"></script>
 	<!-- main js -->
 	<script src="/front/assets/js/main.js"></script>
-	{{-- login e register --}}
-	<script src="/front/assets/js/login-register.js"></script>
+
 
 
     <!-- js -->

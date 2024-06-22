@@ -521,9 +521,7 @@ a.cart-btn {
   margin-bottom: 80px;
 }
 
-.breadcrumb-bg {
-  background-image: url(../front/assets/imgs/breadcrumb-bg.jpg);
-}
+
 
 .breadcrumb-text p {
   color: var(--color-primary);
