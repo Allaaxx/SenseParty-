@@ -11,6 +11,7 @@ use App\Models\ProductImage;
 use App\Rules\ValidatePrice;
 use Illuminate\Support\Facades\File;
 use Intervention\Image\Facades\Image;
+use Gloudemans\Shoppingcart\Facades\Cart;
 
 class ProductController extends Controller
 {

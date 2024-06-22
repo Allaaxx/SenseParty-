@@ -5,45 +5,47 @@ namespace App\Http\Controllers\Seller;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
-use Stripe\Stripe;
-use Stripe\Checkout\Session as StripeSession;
-use Stripe\Exception\ApiErrorException;
+use Gloudemans\Shoppingcart\Facades\Cart;
 
 class CartController extends Controller
 {
     public function addToCart(Request $request)
     {
-        $product = Product::find($request->product_id);
-        $cart = session()->get('cart', []);
 
-        if (isset($cart[$product->id])) {
-            // Se o produto já existe no carrinho, atualize a quantidade
-            $cart[$product->id]['quantity'] += $request->quantity;
-        } else {
-            // Se o produto não existe no carrinho, adicione-o
-            $cart[$product->id] = [
-                "name" => $product->name,
-                "quantity" => $request->quantity,
-                "price" => $product->price,
-            ];
-        }
+        $product = Product::findOrFail($request->input('product_id'));
 
-        session()->put('cart', $cart);
-
-        // Retorne uma resposta JSON indicando sucesso
-        return response()->json([
-            'success' => true,
-            'message' => 'Produto adicionado ao carrinho com sucesso.'
-        ]);
+        Cart::add(
+        $product->id,
+        $product->name, 
+        $request->input('quantity'), 
+        $product->price);
+           
+        return redirect()->route('cart.index')->with('success', 'Produto adicionado ao carrinho com sucesso.');
     }
 
     public function index()
-    {
-        $cart = session()->get('cart', []);
-        $cartCount = count($cart);
+{
+    // Recupera os itens do carrinho
+    $cartItems = Cart::content();
 
-        return view('cart.index', compact('cart', 'cartCount'));
+    // Inicializa um array para armazenar os produtos associados
+    $products = [];
+
+    // Para cada item do carrinho, adiciona o modelo Product associado ao array de produtos
+    foreach ($cartItems as $cartItem) {
+        // Recupera o modelo Product associado ao item do carrinho
+        $product = Product::find($cartItem->id); // Aqui assumindo que o id do produto está no campo id do carrinho
+
+        // Verifica se o produto foi encontrado antes de adicioná-lo ao array
+        if ($product) {
+            $products[$cartItem->id] = $product;
+        }
     }
+
+    // Passa os dados para a view cart.index
+    return view('cart.index', compact('cartItems', 'products'));
+}
+
 
     public function removeFromCart(Request $request)
     {
