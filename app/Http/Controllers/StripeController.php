@@ -5,21 +5,21 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Stripe\Stripe;
 use Stripe\Checkout\Session;
+use Gloudemans\Shoppingcart\Facades\Cart;
 
 class StripeController extends Controller
 {
     public function session(Request $request)
     {
-        $cartCount = session()->has('cart') ? count(session('cart')) : 0;
         // Configura a chave secreta do Stripe
         Stripe::setApiKey(config('stripe.sk'));
 
         // Monta os itens do carrinho para o checkout
         $productItems = [];
-        foreach (session('cart') as $id => $details) {
-            $product_name = $details['name'];
-            $total = $details['price'] * 100; // Converte para centavos (moeda menor)
-            $quantity = $details['quantity'];
+        foreach (Cart::content() as $cartItem) {
+            $product_name = $cartItem->name;
+            $total = $cartItem->price * 100; // Converte para centavos (moeda menor)
+            $quantity = $cartItem->qty;
 
             $productItems[] = [
                 'price_data' => [
@@ -48,25 +48,24 @@ class StripeController extends Controller
 
     public function success()
     {
-        $cartCount = session()->has('cart') ? count(session('cart')) : 0;
+        // Limpa o carrinho após o sucesso do pedido
+        Cart::destroy();
 
         $data = [
-            'pageTitle' => 'Pedido Concluido',
-            'cartCount' => $cartCount,
+            'pageTitle' => 'Pedido Concluído',
+            'cartCount' => Cart::count(), // Atualiza o contador de itens no carrinho
         ];
 
-        session()->forget('cart');
         return view('cart.success', $data);
     }
 
     public function cancel()
     {
-        $cartCount = session()->has('cart') ? count(session('cart')) : 0;
-
         $data = [
             'pageTitle' => 'Pedido Cancelado',
-            'cartCount' => $cartCount,
+            'cartCount' => Cart::count(), // Atualiza o contador de itens no carrinho
         ];
+
         return view('cart.cancel', $data);
     }
 }

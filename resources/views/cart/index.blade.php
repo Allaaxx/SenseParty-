@@ -10,8 +10,6 @@
                     <div class="breadcrumb-text">
                             <p>seu</p>
                         <h1>Carrinho</h1>
-                            
-                        
                     </div>
                 </div>
             </div>
@@ -28,48 +26,8 @@
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="total-section">
-                        <table class="total-table">
-                            <thead class="total-table-head">
-                                <tr class="table-total-row">
-                                    <th>Total</th>
-                                    <th>Preço</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @php
-                                    $total = 0; // Inicializa a variável $total
-                                @endphp
-                                @if (!$cartItems->isEmpty())
-                                    <tr class="total-data">
-                                        <td><strong>Subtotal: </strong></td>
-                                        <td>R$ {{ $total }}</td>
-                                    </tr>
-                                    <tr class="total-data">
-                                        <td><strong>Frete: </strong></td>
-                                        <td>R$ 45</td> <!-- Ajuste dinâmico conforme seu cálculo -->
-                                    </tr>
-                                    <tr class="total-data">
-                                        <td><strong>Total: </strong></td>
-                                        <td>R$ {{ $total + 45 }}</td>
-                                        <!-- Ajuste dinâmico conforme seu cálculo -->
-                                    </tr>
-                                    <tr class="total-data">
-                                        <td colspan="2">
-                                            <form method="GET" action="{{ route('checkout') }}">
-                                                @csrf <!-- Adiciona o token CSRF -->
-                                                <!-- Outros campos do formulário aqui -->
-                                                <button type="submit" class="btn btn-primary">Checkout com
-                                                    Stripe</button>
-                                            </form>
-                                        </td>
-                                    </tr>
-                                @endif
-                            </tbody>
-                        </table>
-
-
-                    </div>
+                    @livewire('cart-totals')
+                    
                     
                 </div>
             </div>
