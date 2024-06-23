@@ -1,49 +1,49 @@
-@extends('back.layout.auth-layout')
-@section('pageTitle', isset($pageTitle) ? $pageTitle : 'Page Title here')
+@extends('back.layout.pages-layout')
+@section('pageTitle', isset($pageTitle) ? $pageTitle : 'Esqueci a senha')
 @section('content')
-<div class="login-box bg-white box-shadow border-radius-10">
-    <div class="login-title">
-        <h2 class="text-center text-primary">Forgot Password</h2>
+
+
+    <div class="breadcrumb-section breadcrumb-bg" style="height:30%; ">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 text-center">
+                    <div class="breadcrumb-text">
+                        <p>Sense Party</p>
+                        <h1>Autenticação</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <h6 class="mb-20">
-        Enter your email address to reset your password
-    </h6>
-    <form action="{{route('seller.send-password-reset-link')}}" method="POST">
-        @csrf
-        <x-alert.form-alert/>
-        <div class="input-group custom">
 
-            <input type="text" class="form-control form-control-lg" placeholder="Email" 
-            name="email" value="{{ old('email') }}">
+    <div class="login-box ">
 
-            <div class="input-group-append custom">
-                <span class="input-group-text"><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
+        <div class="containerr">
+
+            <div class="signin-signup" style="background-color: #07212e; height: 400px; border-radius: 3%; width:  500px">
+                <form action="{{ route('seller.send-password-reset-link') }}" method="POST" class="sign-in-form" style="justify-content: center;">
+                    @csrf
+                    <x-alert.form-alert />
+
+
+                    <h2 class="title" style="color: #f53377;">Esqueceu a senha?</h2>
+
+                    <div class="input-field">
+                        <i class="fas fa-user" aria-hidden="true"></i>
+                        <input type="text" class="form-control form-control-lg" style="margin-top: 0.4rem;"
+                            placeholder="Email" name="email" value="{{ old('email') }}">
+                    </div>
+
+
+                    <input type="submit" value="Enviar" class="btn solid">
+
+                </form>
+
             </div>
 
+            <img src="/front/assets/imgs/log.svg" class="image mt-5" alt="" />
         </div>
-        @error('email')
-            <div class="d-block text-danger" style="margin-top:-25px;margin-bottom:5px">{{ $message }}</div>
-        @enderror
-        <div class="row align-items-center">
-            <div class="col-5">
-                <div class="input-group mb-0">
-                    
-                    <input class="btn btn-primary btn-lg btn-block" type="submit" value="Submit">
-                
-                    
-                </div>
-            </div>
-            <div class="col-2">
-                <div class="font-16 weight-600 text-center" data-color="#707373" style="color: rgb(112, 115, 115);">
-                    OR
-                </div>
-            </div>
-            <div class="col-5">
-                <div class="input-group mb-0">
-                    <a class="btn btn-outline-primary btn-lg btn-block" href="{{route('seller.login')}}">Login</a>
-                </div>
-            </div>
-        </div>
-    </form>
-</div>
+    </div>
+
+
 @endsection

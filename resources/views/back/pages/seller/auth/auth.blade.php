@@ -3,7 +3,7 @@
 @section('content')
 
  
-<div class="breadcrumb-section breadcrumb-bg" style="height:30%; >
+<div class="breadcrumb-section breadcrumb-bg" style="height:30%; ">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 offset-lg-2 text-center">
