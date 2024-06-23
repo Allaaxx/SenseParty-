@@ -3,12 +3,12 @@
 @section('content')
 
  
-<div class="breadcrumb-section breadcrumb-bg" style="z-index: 7;">
+<div class="breadcrumb-section breadcrumb-bg" style="height:30%; >
     <div class="container">
         <div class="row">
             <div class="col-lg-8 offset-lg-2 text-center">
                 <div class="breadcrumb-text">
-                   
+                    <p>Sense Party</p>
                     <h1>Autenticação</h1>
                 </div>
             </div>

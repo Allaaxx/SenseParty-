@@ -75,7 +75,7 @@
                         Cadastrar
                     </button>
                 </div>
-                <img src="img/log.svg" class="image" alt="" />
+                <img src="/front/assets/imgs/log.svg" class="image" alt="" />
             </div>
             <div class="panel right-panel">
                 <div class="content">
@@ -88,7 +88,7 @@
                         Entrar
                     </button>
                 </div>
-                <img src="img/register.svg" class="image" alt="" />
+                <img src="/front/assets/imgs/register.svg" class="image" alt="" />
             </div>
         </div>
     </div>
