@@ -97,7 +97,7 @@
                                     </div>
                                 </div>
                                 <div class="text-right">
-                                    <button class="boxed-btn">Search</button>
+                                    <button class="btn ">Search</button>
                                 </div>
                             </div>
                         </div>

@@ -40,8 +40,8 @@
             success: function(data) {
                 if (data.status == 1) {
                     toastr.success(data.msg);
-                    Livewire.dispatch('updateAdminSellerHeaderInfo')
-                    Livewire.dispatch('updateSellerProfilePage')
+                    Livewire.dispatch('updateAdminSellerHeaderInfo');
+                    Livewire.dispatch('updateSellerProfilePage');
                 } else {
                     toastr.error(data.msg);
                 }
@@ -53,3 +53,4 @@
         });
     </script>
 @endpush
+

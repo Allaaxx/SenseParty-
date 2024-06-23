@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
     <title>@yield('pageTitle')</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="shortcut icon" type="image/png" sizes="16x16" href="/images/site/{{ get_settings()->site_favicon }}" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
@@ -24,6 +25,11 @@
     <link rel="stylesheet" href="/extra-assets/jquery-ui-1.13.2/jquery-ui.structure.min.css">
     <link rel="stylesheet" href="/extra-assets/jquery-ui-1.13.2/jquery-ui.theme.min.css">
     <link rel="stylesheet" href="/extra-assets/summernote/summernote-bs4.min.css">
+    <!-- Carregue o jQuery primeiro -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Inclua os arquivos do Kropify -->
+    <link rel="stylesheet" href="/vendors/mberecall/kropify/css/kropify.min.css">
+    <script src="/vendors/mberecall/kropify/js/kropify.min.js"></script>
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="/back/vendors/styles/core.css" />
     <link rel="stylesheet" type="text/css" href="/back/vendors/styles/icon-font.min.css" />
@@ -43,6 +49,7 @@
         }
     </style>
     <!-- Livewire Styles -->
+    @kropifyStyles
     @livewireStyles()
 
     <!-- Stylesheets Stack -->
@@ -81,7 +88,8 @@
 
     <!-- Footer-->
     @include('front.layout.inc.footer')
-
+    
+    @push('scripts')
     <!-- jquery -->
     <script src="/front/assets/js/jquery-1.11.3.min.js"></script>
     <!-- bootstrap -->
@@ -147,7 +155,7 @@
         });
     </script>
 
-    @push('scripts')
+    
         <script>
             $(document).ready(function() {
                 // Função para exibir notificações Toastr
@@ -185,35 +193,11 @@
             });
         </script>
 
-        <script>
-            $(document).ready(function() {
-                $(".menu > ul > li").click(function(e) {
-                    e.preventDefault(); // Prevenir comportamento padrão do link
-
-                    // Remover a classe active dos irmãos e adicionar ao elemento clicado
-                    $(this).toggleClass("active").siblings().removeClass("active");
-
-                    // Toggle para abrir ou fechar o submenu do item clicado
-                    $(this).children("ul").slideToggle();
-
-                    // Fechar os submenus dos outros itens se estiverem abertos
-                    $(this).siblings().children("ul").slideUp();
-
-                    // Remover a classe active dos itens do submenu dos irmãos
-                    $(this).siblings().find("li").removeClass("active");
-                });
-
-                $(".menu-btn").click(function(e) {
-                    e.preventDefault(); // Prevenir comportamento padrão do botão
-
-                    // Adicionar ou remover a classe active do menu lateral
-                    $(".sidebar").toggleClass("active");
-                });
-            });
-        </script>
+       
 
         <script src="/front/assets/js/script.js"></script>
     @endpush
+    @kropifyScripts
     @livewireScripts
     @stack('scripts')
 </body>

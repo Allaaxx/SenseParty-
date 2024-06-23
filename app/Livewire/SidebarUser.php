@@ -13,7 +13,7 @@ class SidebarUser extends Component
     public $seller;
     
     public $listeners = [
-        'render' => '$refresh',
+        'updateAdminSellerHeaderInfo' => '$refresh',
     ];
 
     public function mount()
