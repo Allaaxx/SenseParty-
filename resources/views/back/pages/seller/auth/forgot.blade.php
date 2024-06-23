@@ -9,14 +9,19 @@
                 <div class="col-lg-8 offset-lg-2 text-center">
                     <div class="breadcrumb-text">
                         <p>Sense Party</p>
-                        <h1>Autenticação</h1>
+                        <h1>Esqueceu a senha?</h1>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="login-box ">
+    <div class="login-box " style="background-image: url('/front/assets/imgs/forgot.svg');
+            background-size: content; 
+            background-repeat: no-repeat;
+            background-position: left;
+            width: auto; 
+            height: 100vh; ">
 
         <div class="containerr">
 
@@ -41,8 +46,9 @@
 
             </div>
 
-            <img src="/front/assets/imgs/log.svg" class="image mt-5" alt="" />
+            
         </div>
+        
     </div>
 
 

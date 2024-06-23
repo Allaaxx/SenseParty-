@@ -323,7 +323,7 @@ class SellerController extends Controller
         );
 
         sendEmail($mailConfig);
-        return redirect()->route('seller.login')->with('success', 'Senha redefinida com sucesso. Faça login com sua nova senha');
+        return redirect()->route('seller.auth')->with('success', 'Senha redefinida com sucesso. ');
     } //end method
 
     public function profileView(Request $request)
