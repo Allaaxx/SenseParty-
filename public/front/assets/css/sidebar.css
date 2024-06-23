@@ -1,0 +1,267 @@
+
+        @import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
+
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Inter", sans-serif;
+        }
+
+        body {
+            background-color: #dbe2f4;
+        }
+
+        .breadcrumb-section {
+            padding: 90px 0;
+            background-size: cover;
+            background-position: center center;
+            position: relative;
+            z-index: 1;
+            background-attachment: fixed;
+        }
+
+        .breadcrumb-section::after {
+            height: 180px;
+        }
+
+        .container-user {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        
+        .sidebar-user {
+            top: 190px;
+            position: fixed;
+            width: 256px;
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            background-color: #07212e;
+            padding: 24px;
+            border-radius: 30px;
+            transition: all 0.3s;
+            z-index: 30;
+        }
+
+        .sidebar-user .head-user {
+            display: flex;
+            gap: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #f6f6f6;
+        }
+
+        .user-img-user {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .user-img-user img {
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .user-details-user .title-user,
+        .menu-user .title-user {
+            font-size: 10px;
+            font-weight: 500;
+            color: #fff;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .user-details-user .name-user {
+            font-size: 14px;
+            font-weight: 500;
+            color: #f6f6f6;
+        }
+
+        .nav-user {
+            flex: 1;
+        }
+
+        .menu-user ul li {
+            position: relative;
+            list-style: none;
+            margin-bottom: 5px;
+        }
+
+        .menu-user ul li a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #fff;
+            text-decoration: none;
+            padding: 12px 8px;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .menu-user ul li>a:hover,
+        .menu-user ul li.active>a {
+            color: #000;
+            background-color: #F53377;
+        }
+
+        .menu-user ul li .icon-user {
+            font-size: 20px;
+        }
+
+        .menu-user ul li .text-user {
+            flex: 1;
+        }
+
+        .menu-user ul li .arrow-user {
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .menu-user ul li.active .arrow-user {
+            transform: rotate(180deg);
+        }
+
+        .menu-user .sub-menu-user {
+            display: none;
+            margin-left: 20px;
+            padding-left: 20px;
+            padding-top: 5px;
+            border-left: 1px solid #07212e;
+        }
+
+        .menu-user .sub-menu-user li a {
+            padding: 10px 8px;
+            font-size: 12px;
+        }
+
+        .menu-user:not(:last-child) {
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #f6f6f6;
+        }
+
+        .menu-btn-user {
+            position: absolute;
+            right: -14px;
+            top: 3.5%;
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #757575;
+            border: 2px solid #f6f6f6;
+            background-color: #fff;
+        }
+
+        .menu-btn-user:hover i {
+            color: #000;
+        }
+
+        .menu-btn-user i {
+            transition: all 0.3s;
+        }
+
+        .sidebar-user.active-user {
+            width: 92px;
+        }
+
+        .sidebar-user.active-user .menu-btn-user i {
+            transform: rotate(180deg);
+        }
+
+        .sidebar-user.active-user .user-details-user {
+            display: none;
+        }
+
+        .sidebar-user.active-user .menu-user .title-user {
+            text-align: center;
+        }
+
+        .sidebar-user.active-user .menu-user ul li .arrow-user {
+            display: none;
+        }
+
+        .sidebar-user.active-user .menu-user>ul>li>a {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sidebar-user.active-user .menu-user>ul>li>a .text-user {
+            position: absolute;
+            left: 70px;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 10px;
+            border-radius: 4px;
+            color: #fff;
+            background-color: #000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+
+        .sidebar-user.active-user .menu-user>ul>li>a .text-user::after {
+            content: "";
+            position: absolute;
+            left: -5px;
+            top: 20%;
+            width: 20px;
+            height: 20px;
+            border-radius: 2px;
+            background-color: #000;
+            transform: rotate(45deg);
+            z-index: -1;
+        }
+
+        .sidebar-user.active-user .menu-user>ul>li>a:hover .text-user {
+            left: 50px;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .sidebar-user.active-user .menu-user .sub-menu-user {
+            position: absolute;
+            top: 0;
+            left: 20px;
+            width: 200px;
+            border-radius: 20px;
+            padding: 10px 20px;
+            border: 1px solid #f6f6f6;
+            background-color: #07212e;
+            box-shadow: 0px 10px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .credits-user {
+            margin: 0 auto;
+            color: #fff;
+            text-align: center;
+            font-size: 3rem;
+        }
+
+        .user-icon {
+            margin-left: 100%;
+            width: 40px;
+            height: auto;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 30px
+        }
+
+        .user-icon img {
+            width: 100%;
+            height: auto;
+        }
+  
