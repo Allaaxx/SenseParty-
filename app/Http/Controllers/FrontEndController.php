@@ -25,7 +25,7 @@ class FrontEndController extends Controller
 
         $produtos  = Product::all();
 
-        $produtosPaginados = Product::paginate(4);
+        $produtosPaginados = Product::paginate(12);
 
         $cart = Cart::content();
 

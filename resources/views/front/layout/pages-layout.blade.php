@@ -64,6 +64,29 @@
 
     <!-- Stylesheets Stack -->
     @stack('stylesheets')
+
+    <style>
+        .user-icon {
+            margin-left: 100%;
+            width: 40px;
+            /* Defina o tamanho da imagem conforme necessário */
+            height: auto;
+            /* Defina o tamanho da imagem conforme necessário */
+            border-radius: 50%;
+            /* Transforma a imagem em um círculo */
+            overflow: hidden;
+            /* Garante que a imagem não ultrapasse os limites do círculo */
+            margin-bottom: 30px
+        }
+
+        .user-icon img {
+            width: 100%;
+            /* Garante que a imagem ocupe toda a área do elemento pai */
+            height: auto;
+            /* Permite que a altura seja ajustada automaticamente */
+            
+        }
+    </style>
 </head>
 
 <body>
