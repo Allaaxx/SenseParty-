@@ -16,11 +16,20 @@ use constDefaults;
 use Illuminate\Support\Facades\File;
 use Mberecall\Kropify\Kropify;
 use App\Models\Shop;
-
-
+use Mberecall\Services\Library\Kropify as LibraryKropify;
 
 class SellerController extends Controller
 {
+
+    public function auth(Request $request)
+    {
+        $data = [
+            'pageTitle' => 'Autenticação'
+        ];
+
+        return view('back.pages.seller.auth.auth');
+    } // end method
+
     public function login(Request $request)
     {
         $data = [
@@ -333,7 +342,7 @@ class SellerController extends Controller
         $old_picture = $seller->picture;
         $filename = 'SELLER_IMG_' . $seller->id . '.jpg';
 
-        $upload = Kropify::getFile($file, $filename)->maxWoH(325)->save($path);
+        $upload = LibraryKropify::getFile($file, $filename)->maxWoH(325)->save($path);
         $infos = $upload->getInfo();
         if ($upload) {
             if ($old_picture != null) {

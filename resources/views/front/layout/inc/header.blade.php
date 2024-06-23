@@ -68,7 +68,7 @@
                 <div class="header-icons">
                   @livewire('cart-counter')
                   <a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
-                  <a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-user"></i></a>
+                  <a class="mobile-hide search-bar-icon" href="{{route('seller.auth')}}"><i class="fas fa-user"></i></a>
                 </div>
               </li>
             </ul>

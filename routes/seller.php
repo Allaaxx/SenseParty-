@@ -8,6 +8,7 @@ Route::prefix('seller')->name('seller.')->group(function () {
 
     Route::middleware(['guest:seller', 'PreventBackHistory'])->group(function () {
         Route::controller(SellerController::class)->group(function () {
+            Route::get('/auth', 'auth')->name('auth');
             Route::get('/login','login')->name('login');
             Route::post('/login-handler','loginHandler')->name('login-handler');
             Route::get('/register','register')->name('register');
