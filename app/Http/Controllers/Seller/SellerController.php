@@ -99,10 +99,10 @@ class SellerController extends Controller
             if (sendEmail($mailConfig)) {
                 return redirect()->route('seller.register-success')->with('success', 'Conta de vendedor criada com sucesso. Verifique seu email para ativar sua conta');
             } else {
-                return redirect()->route('seller.register')->with('fail', 'Erro ao enviar email de verificação');
+                return redirect()->route('seller.auth')->with('fail', 'Erro ao enviar email de verificação');
             }
         } else {
-            return redirect()->route('seller.register')->with('fail', 'Erro ao criar conta de vendedor');
+            return redirect()->route('seller.auth')->with('fail', 'Erro ao criar conta de vendedor');
         }
     } //eND Method
 
@@ -118,12 +118,12 @@ class SellerController extends Controller
                 $seller->email_verified_at = Carbon::now();
                 $seller->save();
 
-                return redirect()->route('seller.login')->with('success', 'Conta de vendedor verificada com sucesso. você pode fazer login.');
+                return redirect()->route('seller.auth')->with('success', 'Conta de vendedor verificada com sucesso. você pode fazer login.');
             } else {
-                return redirect()->route('seller.login')->with('info', 'Conta de vendedor já verificada. você pode fazer login.');
+                return redirect()->route('seller.auth')->with('info', 'Conta de vendedor já verificada. você pode fazer login.');
             }
         } else {
-            return redirect()->route('seller.register')->with('fail', 'Token de verificação inválido');
+            return redirect()->route('seller.auth')->with('fail', 'Token de verificação inválido');
         }
     } // end method
 
@@ -169,19 +169,19 @@ class SellerController extends Controller
             // return redirect()->route('seller.home');
             if (!auth('seller')->user()->verified) {
                 Auth::guard('seller')->logout();
-                return redirect()->route('seller.login')->with('fail', 'Sua conta não está verificada. Verifique seu email');
+                return redirect()->route('seller.auth')->with('fail', 'Sua conta não está verificada. Verifique seu email');
             } else {
                 return redirect()->route('seller.home');
             }
         } else {
-            return redirect()->route('seller.login')->with('fail', 'Credenciais inválidas');
+            return redirect()->route('seller.auth')->with('fail', 'Credenciais inválidas');
         }
     } //End method
 
     public function logoutHandler(Request $request)
     {
         Auth::guard('seller')->logout();
-        return redirect()->route('seller.login')->with('fail', 'Você saiu !');
+        return redirect()->route('seller.auth')->with('success', 'Você saiu!');
     } // end method
 
     public function forgotPassword(Request $request)
