@@ -51,9 +51,9 @@
             <div class="col-sm-12">
                 <div class="input-group mb-0">
                     
-                    <input class="btn btn-primary btn-lg btn-block" type="submit" value="Sign In">
+                    <input class="boxed-btn btn-lg btn-block" type="submit" value="Sign In">
                
-                    {{-- <a class="btn btn-primary btn-lg btn-block" href="index.html">Sign In</a> --}}
+                    {{-- <a class="boxed-btn btn-lg btn-block" href="index.html">Sign In</a> --}}
                 </div>
                 
             </div>

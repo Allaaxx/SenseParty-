@@ -1,6 +1,7 @@
-@extends('back.layout.page-layout')
+@extends('back.layout.dashboard-layout')
 @section('pageTitle', isset($pageTitle) ? $pageTitle : 'Page Title here')
 @section('content')
+<div class="container">
     <div class="page-header">
         <div class="row">
             <div class="col-md-12 col-sm-12">
@@ -22,7 +23,7 @@
     </div>
 
     @livewire('seller.seller-profile')
-
+</div>
 @endsection
 @push('scripts')
     <script>

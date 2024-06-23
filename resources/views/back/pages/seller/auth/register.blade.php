@@ -44,7 +44,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="input-group mb-0">
-                    <button type="submit" class="btn btn-primary btn-lg btn-block">Criar conta</button>
+                    <button type="submit" class="boxed-btn btn-lg btn-block">Criar conta</button>
                 </div>
                 <div class="font-16 weight-600 pt-10 pb-10 text-center" data-color="#707373" style="color:rgb(112, 115, 115)">OU</div>
                 <div class="input-group mb-0">

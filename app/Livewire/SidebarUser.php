@@ -12,6 +12,10 @@ class SidebarUser extends Component
     public $admin;
     public $seller;
     
+    public $listeners = [
+        'render' => '$refresh',
+    ];
+
     public function mount()
     {
         if (Auth::guard('admin')->check()) {

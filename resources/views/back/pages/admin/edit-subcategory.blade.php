@@ -9,7 +9,7 @@
                         <h4 class="text-dark">Editar Subcategoria</h4>
                     </div>
                     <div class="pull-right">
-                        <a href="{{ route('admin.manage-categories.cats-subcats-list') }}" class="btn btn-primary">
+                        <a href="{{ route('admin.manage-categories.cats-subcats-list') }}" class="boxed-btn">
                             <i class="ion-arrow-left-a"></i>Volta para lista de Categorias
                         </a>
                     </div>
@@ -94,7 +94,7 @@
 
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Salvar Mudanças</button>
+                    <button type="submit" class="boxed-btn">Salvar Mudanças</button>
                 </form>
             </div>
         </div>

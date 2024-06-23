@@ -1,6 +1,7 @@
-@extends('back.layout.page-layout')
+@extends('back.layout.dashboard-layout')
 @section('pageTitle', isset($pageTitle) ? $pageTitle : 'Page Title here')
 @section('content')
+<div class="container">
     <div class="page-header">
         <div class="row">
             <div class="col-md-6 col-sm-12">
@@ -19,7 +20,7 @@
                 </nav>
             </div>
             <div class="col-md-6 col-sm-12 text-right">
-                <a href="{{ route('seller.product.all-products') }}" class="btn btn-primary">Ver todos produtos</a>
+                <a href="{{ route('seller.product.all-products') }}" class="boxed-btn">Ver todos produtos</a>
             </div>
         </div>
     </div>
@@ -122,7 +123,7 @@
         </div>
 
         <div class="form-group">
-            <button type="submit" class="btn btn-primary">Update Produto</button>
+            <button type="submit" class="  boxed-btn">Update Produto</button>
         </div>
     </form>
     <hr>
@@ -146,6 +147,11 @@
         </div>
 
     </div>
+  
+</div>
+  
+
+   
 @endsection
 @push('stylesheets')
     <link rel="stylesheet" href="/extra-assets/dropzonejs/min/dropzone.min.css">

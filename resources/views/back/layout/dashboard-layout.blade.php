@@ -32,6 +32,16 @@
 
     <link rel="stylesheet" href="/front/assets/css/sidebar.css">
 
+    <style>
+        .boxed-btn {
+            font-family: 'Poppins', sans-serif;
+            display: inline-block;
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            padding: 10px 20px;
+            border: none;
+        }
+    </style>
     <!-- Livewire Styles -->
     @livewireStyles()
 

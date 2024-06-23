@@ -1,6 +1,8 @@
-@extends('back.layout.page-layout')
+@extends('back.layout.dashboard-layout')
 @section('pageTitle', isset($pageTitle) ? $pageTitle : 'Page Title here')
 @section('content')
+<div class="container">
+
     <div class="page-header">
         <div class="row">
             <div class="col-md-6 col-sm-12">
@@ -19,13 +21,12 @@
                 </nav>
             </div>
             <div class="col-md-6 col-sm-12 text-right">
-                <a href="{{ route('seller.product.all-products') }}" class="btn btn-primary">Ver todos produtos</a>
+                <a href="{{ route('seller.product.all-products') }}" class="boxed-btn">Ver todos produtos</a>
             </div>
         </div>
     </div>
 
-    <form action="{{ route('seller.product.create-product') }}" method="POST" enctype="multipart/form-data"
-        id="addProductForm">
+    <form action="{{ route('seller.product.create-product') }}" method="POST" enctype="multipart/form-data" id="addProductForm">
         @csrf
 
         <div class="row pd-10">
@@ -113,10 +114,14 @@
         </div>
 
         <div class="form-group">
-            <button type="submit" class="btn btn-primary">Criar Produto</button>
+            <a type="submit" class="boxed-btn" style="">Criar Produto</a>
         </div>
     </form>
+</div>
+  
 @endsection
+    
+
 @push('scripts')
     <script>
         //List SUBCATEGORIES according to select

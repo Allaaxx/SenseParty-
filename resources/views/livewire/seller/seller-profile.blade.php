@@ -86,7 +86,7 @@
                                             </div>
                                         </div>
             
-                                        <button type="submit" id="btnNotification" class="btn btn-primary">Salvar Alterações</button>
+                                        <button type="submit" id="btnNotification" class="boxed-btn">Salvar Alterações</button>
                                     </form>
                                 </div>
                             </div>
@@ -126,7 +126,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <button type="submit" class="btn btn-primary">Mudar senha</button>
+                                        <button type="submit" class="boxed-btn">Mudar senha</button>
                                     </form>
                                 </div>
                             </div>

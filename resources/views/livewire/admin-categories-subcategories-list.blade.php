@@ -9,7 +9,7 @@
                     </div>
 
                     <div class="pull-right">
-                        <a href="{{ route('admin.manage-categories.add-category') }}" class="btn btn-primary btn-sm"
+                        <a href="{{ route('admin.manage-categories.add-category') }}" class="boxed-btn btn-sm"
                             type="button">
                             <i class="fa fa-plus"></i>
                             Adicionar Categoria
@@ -84,7 +84,7 @@
                     </div>
 
                     <div class="pull-right">
-                        <a href="{{ route('admin.manage-categories.add-subcategory') }}" class="btn btn-primary btn-sm" type="button">
+                        <a href="{{ route('admin.manage-categories.add-subcategory') }}" class="boxed-btn btn-sm" type="button">
                             <i class="fa fa-plus"></i>
                             Adicionar Sub Categoria
                         </a>

@@ -64,7 +64,7 @@
                             <textarea  cols="4" rows="4" placeholder="Descrição do conteú..." class="form-control" wire:model='site_meta_description'></textarea>
                             @error('site_meta_description')<span class="text-danger">{{ $message }}</span>@enderror
                         </div>
-                        <button type="submit" class="btn btn-primary">Salvar mudanças</button>
+                        <button type="submit" class="boxed-btn">Salvar mudanças</button>
                     </form>
                 </div>
             </div>
@@ -83,7 +83,7 @@
                                     <input type="file" name="site_logo" id="site_logo" class="form-control">
                                     <span class="text-danger error-text site_logo_error"></span>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Salvar mudanças</button>
+                                <button type="submit" class="boxed-btn">Salvar mudanças</button>
                             </form>
                         </div>
                         <div class="col-md-6">
@@ -97,7 +97,7 @@
                                     <input type="file" name="site_favicon" id="site_favicon" class="form-control">
                                     <span class="text-danger error-text site_favicon_error"></span>
                                 </div>
-                                <button type="sumbit" class="btn btn-primary">Salvar mudanças</button>
+                                <button type="sumbit" class="boxed-btn">Salvar mudanças</button>
                             </form>
                         </div>
                     </div>
@@ -156,7 +156,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <button type="submit" class="btn btn-primary">Salvar mudanças</button>
+                                <button type="submit" class="boxed-btn">Salvar mudanças</button>
                             </div>
                         </div>
                     </form>
