@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontEndController;
+use App\Http\Controllers\pesquisaProdController;
 use App\Http\Controllers\Seller\CartController;
 use App\Http\Controllers\Seller\ProductController;
 use App\Http\Controllers\StripeController;
@@ -37,6 +38,8 @@ Route::group(['prefix' => ''], function () {
 // Rotas para o ProductController
 Route::resource('products', ProductController::class);
 
+Route::get('/search', [pesquisaProdController::class, 'pesquisa'])->name('product.search');
+Route::get('/search-error', [pesquisaProdController::class, 'pesquisa'])->name('product.search-error');
 // Rotas para o CartController
 Route::prefix('seller')->group(function () {
     // Rotas para o StripeController

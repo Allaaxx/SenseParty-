@@ -68,4 +68,7 @@
 </div>
 <!-- end testimonail-section -->
 
+    <!-- logo carousel -->
+    @include('front.layout.inc.logos')
+    
 @endsection

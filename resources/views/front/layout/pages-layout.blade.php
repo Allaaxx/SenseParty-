@@ -81,11 +81,10 @@
 
 
 
-    <!-- logo carousel -->
-    @include('front.layout.inc.logos')
 
 
-   
+
+
 
 
     <!-- Footer-->
@@ -116,7 +115,7 @@
 	<script src="/front/assets/js/sticker.js"></script>
 	<!-- main js -->
 	<script src="/front/assets/js/main.js"></script>
-	
+
     <!-- js -->
     <script src="/back/vendors/scripts/core.js"></script>
     <script src="/back/vendors/scripts/script.min.js"></script>
@@ -140,7 +139,7 @@
         $(document).ready(function(){
             $('.summernote').summernote({
                 height: 200,
-                
+
             });
         });
     </script>

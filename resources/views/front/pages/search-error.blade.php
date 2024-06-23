@@ -5,8 +5,11 @@
 
 {{-- content --}}
 
-@include('front.layout.inc.home')
+@include('front.layout.inc.search-error')
 
-meu pintinho
 
 @endsection
+
+
+
+

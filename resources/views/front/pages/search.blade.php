@@ -1,9 +1,15 @@
-@extends('front.layout.auth-layout')
+@extends('front.layout.pages-layout')
 @section('pageTitle', isset($pageTitle) ? $pageTitle : 'Sense Party')
 @section('content')
 
 
 {{-- content --}}
-@include('front.layout.inc.login-register')
+
+@include('front.layout.inc.search-results')
+
 
 @endsection
+
+
+
+
