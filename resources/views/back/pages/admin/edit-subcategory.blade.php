@@ -1,6 +1,7 @@
-@extends('back.layout.page-layout')
-@section('pageTitle', isset($pageTitle) ? $pageTitle : 'Editar Subcategoria')
+@extends('back.layout.dashboard-layout')
+@section('pageTitle', isset($pageTitle) ? $pageTitle : 'Dashboard')
 @section('content')
+<div class="container">
     <div class="row">
         <div class="col-md 12">
             <div class="pd-20 card-box mb-30">
@@ -99,6 +100,7 @@
             </div>
         </div>
     </div>
+</div>
 @endsection
 @push('scripts')
 @endpush

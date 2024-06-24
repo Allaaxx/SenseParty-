@@ -1,7 +1,7 @@
-@extends('back.layout.page-layout')
-@section('pageTitle', isset($pageTitle) ? $pageTitle : 'Perfil')
+@extends('back.layout.dashboard-layout')
+@section('pageTitle', isset($pageTitle) ? $pageTitle : 'Dashboard')
 @section('content')
-
+<div class="container">
 
     <div class="page-header">
         <div class="row">
@@ -40,7 +40,8 @@
 
 
     </div>
-@endsection
+</div>
+    @endsection
 
 @push('scripts')
     <script>

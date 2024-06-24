@@ -1,7 +1,9 @@
-@extends('back.layout.page-layout')
-@section('pageTitle', isset($pageTitle) ? $pageTitle : 'Categorias & Subcategorias')
+@extends('back.layout.dashboard-layout')
+@section('pageTitle', isset($pageTitle) ? $pageTitle : 'Dashboard')
 @section('content')
+<div class="container">
     @livewire('admin-categories-subcategories-list')
+</div>
 @endsection
 
 @push('scripts')

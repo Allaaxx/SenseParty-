@@ -8,8 +8,10 @@
     <title>@yield('pageTitle')</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="shortcut icon" type="image/png" sizes="16x16" href="/images/site/{{ get_settings()->site_favicon }}" />
+    {{-- google font --}}
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+    <!-- CSS -->
     <link rel="stylesheet" href="/front/assets/css/all.min.css">
     <link rel="stylesheet" href="/front/assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/front/assets/css/owl.carousel.css">
@@ -19,14 +21,17 @@
     <link rel="stylesheet" href="/front/assets/css/meanmenu.min.css">
     <link rel="stylesheet" href="/front/assets/css/main.css">
     <link rel="stylesheet" href="/front/assets/css/responsive.css">
+    <!-- Ijabo -->
     <link rel="stylesheet" href="/extra-assets/ijabo/ijabo.min.css">
     <link rel="stylesheet" href="/extra-assets/ijaboCropTool/ijaboCropTool.min.css">
+
+    <!-- jQuery UI -->
     <link rel="stylesheet" href="/extra-assets/jquery-ui-1.13.2/jquery-ui.min.css">
     <link rel="stylesheet" href="/extra-assets/jquery-ui-1.13.2/jquery-ui.structure.min.css">
     <link rel="stylesheet" href="/extra-assets/jquery-ui-1.13.2/jquery-ui.theme.min.css">
+    <!-- Summernote -->
     <link rel="stylesheet" href="/extra-assets/summernote/summernote-bs4.min.css">
-    <!-- Carregue o jQuery primeiro -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <!-- Inclua os arquivos do Kropify -->
     <link rel="stylesheet" href="/vendors/mberecall/kropify/css/kropify.min.css">
     <script src="/vendors/mberecall/kropify/js/kropify.min.js"></script>
@@ -37,6 +42,22 @@
     <script src="https://kit.fontawesome.com/ff01bd9010.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="/front/assets/css/sidebar.css">
+
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                "gtm.start": new Date().getTime(),
+                event: "gtm.js"
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != "dataLayer" ? "&l=" + l : "";
+            j.async = true;
+            j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, "script", "dataLayer", "GTM-NXZMQSS");
+    </script>
 
     <style>
         .boxed-btn {
@@ -52,7 +73,6 @@
     @kropifyStyles
     @livewireStyles()
 
-    <!-- Stylesheets Stack -->
     @stack('stylesheets')
 </head>
 
@@ -70,52 +90,56 @@
             <div class="row">
                 <div class="col-lg-8 offset-lg-2 text-center">
                     <div class="breadcrumb-text">
-                        
+
                     </div>
                 </div>
             </div>
         </div>
-    </div> 
+    </div>
 
-    
+
     <div class="container-user">
         @livewire('sidebar-user')
 
         {{-- content --}}
         @yield('content')
     </div>
-    
+
 
     <!-- Footer-->
     @include('front.layout.inc.footer')
-    
-    @push('scripts')
-    <!-- jquery -->
-    <script src="/front/assets/js/jquery-1.11.3.min.js"></script>
-    <!-- bootstrap -->
-    <script src="/front/assets/bootstrap/js/bootstrap.min.js"></script>
-    <!-- count down -->
-    <script src="/front/assets/js/jquery.countdown.js"></script>
-    <!-- isotope -->
-    <script src="/front/assets/js/jquery.isotope-3.0.6.min.js"></script>
-    <!-- waypoints -->
-    <script src="/front/assets/js/waypoints.js"></script>
-    <!-- owl carousel -->
-    <script src="/front/assets/js/owl.carousel.min.js"></script>
-    <!-- magnific popup -->
-    <script src="/front/assets/js/jquery.magnific-popup.min.js"></script>
-    <!-- mean menu -->
-    <script src="/front/assets/js/jquery.meanmenu.min.js"></script>
-    <!-- sticker js -->
-    <script src="/front/assets/js/sticker.js"></script>
-    <!-- main js -->
-    <script src="/front/assets/js/main.js"></script>
 
     <!-- js -->
+
+    <!-- Load jQuery first -->
+    <script src="/back/vendors/scripts/jquery-3.6.0.min.js"></script>
     <script src="/back/vendors/scripts/core.js"></script>
+
+    <!-- jQuery UI -->
+    <script src="/extra-assets/jquery-ui-1.13.2/jquery-ui.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="/back/vendors/scripts/bootstrap.min.js"></script>
     <script src="/back/vendors/scripts/script.min.js"></script>
     <script src="/back/vendors/scripts/process.js"></script>
     <script src="/back/vendors/scripts/layout-settings.js"></script>
+
+    <!-- Plugins -->
+    <script src="/back/src/plugins/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="/back/src/plugins/datatables/js/dataTables.bootstrap4.min.js"></script>
+    <script src="/back/src/plugins/datatables/js/dataTables.responsive.min.js"></script>
+    <script src="/back/src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
+    <script src="/back/src/plugins/chart.js/Chart.min.js"></script>
+    <script src="/back/src/plugins/highcharts-6.0.7/code/highcharts.js"></script>
+    <script src="/back/src/plugins/highcharts-6.0.7/code/highcharts-more.js"></script>
+    <script src="/back/src/plugins/jvectormap/jquery-jvectormap-2.0.3.min.js"></script>
+    <script src="/back/src/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="/back/vendors/scripts/dashboard.js"></script>
+
+    <!-- Ijabo and Summernote -->
+    <script src="/extra-assets/ijabo/ijabo.min.js"></script>
+    <script src="/extra-assets/ijaboCropTool/ijaboCropTool.min.js"></script>
+    <script src="/extra-assets/summernote/summernote-bs4.min.js"></script>
     <script>
         if (navigator.userAgent.indexOf('Firefox') != -1) {
             history.pushState(null, null, document.URL);
@@ -125,11 +149,7 @@
         }
     </script>
 
-    <script src="/extra-assets/ijabo/ijabo.min.js"></script>
-    <script src="/extra-assets/ijabo/jquery.ijaboViewer.min.js"></script>
-    <script src="/extra-assets/ijaboCropTool/ijaboCropTool.min.js"></script>
-    <script src="/extra-assets/jquery-ui-1.13.2/jquery-ui.min.js"></script>
-    <script src="/extra-assets/summernote/summernote-bs4.min.js"></script>
+
     <script>
         $(document).ready(function() {
             $('.summernote').summernote({
@@ -154,49 +174,7 @@
             }
         });
     </script>
-
-    
-        <script>
-            $(document).ready(function() {
-                // Função para exibir notificações Toastr
-                function showToastr(type, message) {
-                    toastr.remove();
-                    toastr[type](message);
-                }
-
-                // Manipula o envio do formulário de adicionar ao carrinho
-                $('#addToCartForm').submit(function(e) {
-                    e.preventDefault();
-                    var form = $(this);
-                    var url = form.attr('action');
-
-                    $.ajax({
-                        url: url,
-                        type: 'POST',
-                        data: form.serialize(),
-                        dataType: 'json',
-                        success: function(response) {
-                            if (response.success) {
-                                showToastr('success', response.message);
-                            } else {
-                                showToastr('error', response.message);
-                            }
-                        },
-                        error: function(xhr, status, error) {
-                            console.error(xhr.responseText);
-                            showToastr('error',
-                                'Erro ao adicionar o produto ao carrinho. Por favor, tente novamente.'
-                            );
-                        }
-                    });
-                });
-            });
-        </script>
-
-       
-
-        <script src="/front/assets/js/script.js"></script>
-    @endpush
+    <script src="/front/assets/js/script.js"></script>
     @kropifyScripts
     @livewireScripts
     @stack('scripts')
