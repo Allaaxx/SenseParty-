@@ -18,12 +18,12 @@ class Authenticate extends Middleware
         if(!$request->expectsJson()){
             if($request->routeIs('admin.*')){
                 session()->flash('fail', 'Você precisa estar logado para acessar esta página');
-                return route('admin.login');
+                return route('admin.auth');
             }
 
             if($request->routeIs('seller.*')){
                 session()->flash('fail', 'Você precisa estar logado para acessar esta página');
-                return route('seller.login');
+                return route('seller.auth');
             }
         }
     }
