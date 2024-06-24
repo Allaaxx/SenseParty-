@@ -567,9 +567,8 @@ a.cart-btn {
 # Header Styles
 
 ----------------------------------------------------------------------------- */
-ul.navbar-nav li.nav-item a.nav-link,
-ul.navbar-nav li.nav-item.active a.nav-link {
-  color: var(--color-black2);
+ul.navbar-nav li.nav-item a.nav-link, ul.navbar-nav li.nav-item.active a.nav-link {
+  color: #051922;
 }
 
 .top-header-area {
@@ -579,14 +578,12 @@ ul.navbar-nav li.nav-item.active a.nav-link {
   padding: 25px 0;
 }
 
-.top-header-area.white ul.navbar-nav li.nav-item a.nav-link,
-.top-header-area.white ul.navbar-nav li.nav-item.active a.nav-link {
-  color: var(--color-white);
+.top-header-area.white ul.navbar-nav li.nav-item a.nav-link, .top-header-area.white ul.navbar-nav li.nav-item.active a.nav-link {
+  color: #fff;
 }
 
-ul.navbar-nav li.nav-item a.nav-link,
-ul.navbar-nav li.nav-item.active a.nav-link {
-  color: var(--color-white);
+ul.navbar-nav li.nav-item a.nav-link, ul.navbar-nav li.nav-item.active a.nav-link {
+  color: #fff;
   font-weight: 700;
   margin-right: 14px;
 }
@@ -606,21 +603,21 @@ nav.main-menu ul li {
 }
 
 nav.main-menu ul li a {
-  color: var(--color-white);
+  color: #fff;
   font-weight: 700;
   display: block;
   padding: 15px;
 }
 
-nav.main-menu ul>li {
+nav.main-menu ul > li {
   position: relative;
 }
 
 nav.main-menu ul ul.sub-menu {
   position: absolute;
-  background-color: var(--color-white);
-  width: 100px;
-  /* padding: 15px 15px; */
+  background-color: #fff;
+  width: 220px;
+  padding: 15px 15px;
   margin: 0;
   left: 0;
   top: 50px;
@@ -635,25 +632,40 @@ nav.main-menu ul ul.sub-menu {
 }
 
 nav.main-menu ul ul.sub-menu li {
-  display: block;
-
+  display: inline-flex; 
+  text-align: left;
 }
-
 
 nav.main-menu ul ul.sub-menu li a {
   color: #555;
-  padding: 8px;
+  font-weight: 600;
+  padding: 7px 10px;
   font-size: 13px;
-  
-  font-size: 13px;
+}
+
+nav.main-menu ul > li:hover ul {
+  opacity: 1;
+  visibility: visible;
 }
 
 nav.main-menu ul li:last-child a {
   display: inline-block;
 }
 
-nav.main-menu>ul li:last-child {
+nav.main-menu > ul li:last-child {
   float: right;
+}
+
+.sub-menu img{
+  max-height: 50px;
+}
+.site-logo {
+  float: left;
+  max-width: 150px;
+}
+
+ul.sub-menu li:last-child {
+  float: none !important;
 }
 
 .site-logo {

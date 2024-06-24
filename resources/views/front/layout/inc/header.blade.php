@@ -18,8 +18,23 @@
             <ul>
               <li><a href="{{ route('home-page') }}">Início</a></li>
 
-              <li>
-                <a href="#">Categorias</a>
+
+              <li><a href="#">Categorias</a>
+                <ul class="sub-menu text-left">
+                  @if (count(get_categories()) > 0)
+                  @foreach (get_categories() as $category)
+                  <li>
+                    <img src="/images/categories/{{ $category->category_image }}" alt="">
+                    <a href="#">{{ $category->category_name }}</a>
+                  
+                  </li>
+                  @endforeach
+                  @endif
+                </ul>
+              </li>
+
+              {{-- <li class="hover-sub">
+                <a href="#" class="categoria">Categorias</a>
                 @if (count(get_categories()) > 0)
                 @foreach (get_categories() as $category)
                 <ul class="sub-menu">
@@ -59,7 +74,7 @@
                 </ul>
                 @endforeach
                 @endif
-              </li>
+              </li> --}}
 
               <li><a href="{{ route('contact-page') }}">Contato</a></li>
               <li><a href="{{ route('shop-page') }}">Loja</a></li>
