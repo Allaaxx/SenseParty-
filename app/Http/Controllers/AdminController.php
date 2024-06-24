@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Mail;
-use App\Models\Admin; // Importe a classe Admin aqui
+use App\Models\Admin; 
 use constGuards;
 use constDefaults;
 use Illuminate\Support\Facades\File;
@@ -17,6 +17,11 @@ use App\Models\GeneralSetting;
 
 class AdminController extends Controller
 {
+    public function auth()
+    {
+        return view('back.pages.admin.auth.auth');
+    }
+
     public function loginHandler(Request $request)
     {
         $fieldType = filter_var($request->login_id, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
@@ -52,14 +57,14 @@ class AdminController extends Controller
         if (Auth::guard('admin')->attempt($creds)) {
             return redirect()->route('admin.home');
         } else {
-            return redirect()->route('admin.login')->with('fail', 'Credenciais inválidas.');
+            return redirect()->route('admin.auth')->with('fail', 'Credenciais inválidas.');
         }
     }
 
     public function logoutHandler(Request $request)
     {
         Auth::guard('admin')->logout();
-        return redirect()->route('admin.login')->with('success', 'Você saiu com sucesso.');
+        return redirect()->route('admin.auth')->with('success', 'Você saiu com sucesso.');
     }
 
     public function sendPasswordResetLink(Request $request)
@@ -191,7 +196,7 @@ class AdminController extends Controller
 
         sendEmail($mailConfig);
 
-        return redirect()->route('admin.login')->with('success', 'Senha redefinida com sucesso.');
+        return redirect()->route('admin.auth')->with('success', 'Senha redefinida com sucesso.');
     }
 
     public function profileView(Request $request)

@@ -9,6 +9,8 @@ use App\Models\Admin;
 Route::prefix('admin')->name('admin.')->group(function () {
 
     Route::middleware(['guest:admin', 'PreventBackHistory'])->group(function () {
+        Route::get('/auth', [AdminController::class, 'auth'])->name('auth');
+
         Route::view('/login', 'back.pages.admin.auth.login')->name('login');
         Route::post('/login_handler', [AdminController::class, 'loginHandler'])->name('login_handler');
         Route::view('/forgot-password', 'back.pages.admin.auth.forgot-password')->name('forgot-password');

@@ -48,28 +48,64 @@
             }
 
             // Manipula o envio do formulário de adicionar ao carrinho
-            $('#addToCartForm').submit(function(e) {
-                e.preventDefault();
-                var form = $(this);
-                var url = form.attr('action');
+            $(document).ready(function() {
+                function showToastr(type, message) {
+                    toastr.remove();
+                    toastr[type](message);
+                }
 
-                $.ajax({
-                    url: url,
-                    type: 'POST',
-                    data: form.serialize(),
-                    dataType: 'json',
-                    success: function(response) {
-                        if (response.success) {
-                            showToastr('success', response.message);
-                            // Aqui você pode adicionar lógica adicional após o sucesso da adição, se necessário
-                        } else {
-                            showToastr('error', response.message);
+                $('#addToCartForm').submit(function(e) {
+                    e.preventDefault();
+                    var form = $(this);
+                    var url = form.attr('action');
+
+                    $.ajax({
+                        url: url,
+                        type: 'POST',
+                        data: form.serialize(),
+                        dataType: 'json',
+                        success: function(response) {
+                            if (response.success) {
+                                showToastr('success', response.message);
+                            } else {
+                                showToastr('error', response.message);
+                            }
+                        },
+                        error: function(xhr, status, error) {
+                            console.error(xhr.responseText);
+                            showToastr('error',
+                                'Erro ao adicionar o produto ao carrinho. Por favor, tente novamente.'
+                            );
                         }
-                    },
-                    error: function(xhr, status, error) {
-                        console.error(xhr.responseText);
-                        showToastr('error', 'Erro ao adicionar o produto ao carrinho. Por favor, tente novamente.');
-                    }
+                    });
+                });
+
+                // Script para remover do carrinho
+                $('.remove-from-cart-form').submit(function(e) {
+                    e.preventDefault();
+                    var form = $(this);
+                    var url = form.attr('action');
+
+                    $.ajax({
+                        url: url,
+                        type: 'POST',
+                        data: form.serialize(),
+                        dataType: 'json',
+                        success: function(response) {
+                            if (response.success) {
+                                showToastr('success', response.message);
+                                
+                            } else {
+                                showToastr('error', response.message);
+                            }
+                        },
+                        error: function(xhr, status, error) {
+                            console.error(xhr.responseText);
+                            showToastr('error',
+                                'Erro ao remover o produto do carrinho. Por favor, tente novamente.'
+                            );
+                        }
+                    });
                 });
             });
         });
