@@ -147,13 +147,13 @@
             default_img: $('#image-preview').data('ijabo-default-img'),
             imageShape: "square",
             allowedExtensions: ['jpg', 'jpeg', 'png'],
-            onErrorShape: function(message, element) {
-                alert(message);
-            },
             onInvalidType: function(message, element) {
-                alert(message);
+                toastr.error('Tipo de arquivo inválido');
+
             },
-            onSuccess: function(image) {}
+            onSuccess: function(image) {
+                toastr.success('Imagem carregada com sucesso');
+            }
         });
 
         //submit product form
