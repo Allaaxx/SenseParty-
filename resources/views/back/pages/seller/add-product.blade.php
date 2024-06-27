@@ -114,7 +114,7 @@
         </div>
 
         <div class="form-group">
-            <a type="submit" class="boxed-btn" style="">Criar Produto</a>
+            <button type="submit" class="boxed-btn" style="">Criar Produto</button>
         </div>
     </form>
 </div>

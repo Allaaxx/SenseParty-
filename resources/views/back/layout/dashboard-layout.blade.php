@@ -11,6 +11,9 @@
     {{-- google font --}}
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+    {{-- jquery --}}
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <!-- CSS -->
     <link rel="stylesheet" href="/front/assets/css/all.min.css">
     <link rel="stylesheet" href="/front/assets/bootstrap/css/bootstrap.min.css">
@@ -40,6 +43,8 @@
     <link rel="stylesheet" type="text/css" href="/back/vendors/styles/icon-font.min.css" />
     <link rel="stylesheet" type="text/css" href="/back/vendors/styles/style.css" />
     <script src="https://kit.fontawesome.com/ff01bd9010.js" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <link rel="stylesheet" href="/front/assets/css/sidebar.css">
 
@@ -110,16 +115,17 @@
     @include('front.layout.inc.footer')
 
     <!-- js -->
+    
 
     <!-- Load jQuery first -->
-    <script src="/back/vendors/scripts/jquery-3.6.0.min.js"></script>
+    
     <script src="/back/vendors/scripts/core.js"></script>
 
     <!-- jQuery UI -->
     <script src="/extra-assets/jquery-ui-1.13.2/jquery-ui.min.js"></script>
 
     <!-- Bootstrap -->
-    <script src="/back/vendors/scripts/bootstrap.min.js"></script>
+    <script src="/back/src/plugins/bootstrap/bootstrap.min.js"></script>
     <script src="/back/vendors/scripts/script.min.js"></script>
     <script src="/back/vendors/scripts/process.js"></script>
     <script src="/back/vendors/scripts/layout-settings.js"></script>
@@ -129,17 +135,18 @@
     <script src="/back/src/plugins/datatables/js/dataTables.bootstrap4.min.js"></script>
     <script src="/back/src/plugins/datatables/js/dataTables.responsive.min.js"></script>
     <script src="/back/src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
-    <script src="/back/src/plugins/chart.js/Chart.min.js"></script>
+    
     <script src="/back/src/plugins/highcharts-6.0.7/code/highcharts.js"></script>
     <script src="/back/src/plugins/highcharts-6.0.7/code/highcharts-more.js"></script>
     <script src="/back/src/plugins/jvectormap/jquery-jvectormap-2.0.3.min.js"></script>
     <script src="/back/src/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-    <script src="/back/vendors/scripts/dashboard.js"></script>
+    
 
     <!-- Ijabo and Summernote -->
     <script src="/extra-assets/ijabo/ijabo.min.js"></script>
     <script src="/extra-assets/ijaboCropTool/ijaboCropTool.min.js"></script>
     <script src="/extra-assets/summernote/summernote-bs4.min.js"></script>
+    <script src="/extra-assets/ijabo/jquery.ijaboViewer.min.js"></script>
     <script>
         if (navigator.userAgent.indexOf('Firefox') != -1) {
             history.pushState(null, null, document.URL);
