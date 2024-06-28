@@ -12,9 +12,9 @@
                                 <h4><a href="#">{{ $item->name }}</a></h4>
                                 <div class="price">
                                     @if ($item->compare_price)
-                                        <del>$ {{ $item->compare_price }}</del>
+                                        <del>R$ {{ $item->compare_price }}</del>
                                     @endif
-                                    <ins>$ {{ $item->price }}</ins>
+                                    <ins>R$ {{ $item->price }}</ins>
                                 </div>
                                 <div class="btn-group">
                                     <a href="{{ route('seller.product.edit-product', ['id'=>$item->id]) }}" class="btn btn-outline-primary btn-sm">Editar</a>

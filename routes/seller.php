@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\pesquisaProdController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Seller\SellerController;
 use App\Http\Controllers\Seller\ProductController;
@@ -19,6 +20,8 @@ Route::prefix('seller')->name('seller.')->group(function () {
             Route::post('/send-password-reset-link', 'sendResetPasswordLink')->name('send-password-reset-link');
             Route::get('/password-reset/{token}', 'showResetForm')->name('reset-password');
             Route::post('/reset-password-hanlder', 'resetPasswordHandler')->name('reset-password-handler');
+            Route::get('/search', [pesquisaProdController::class, 'pesquisa'])->name('product.search');
+            Route::get('/search-error', [pesquisaProdController::class, 'pesquisa'])->name('product.search-error');
         });
     });
     Route::middleware(['auth:seller', 'PreventBackHistory'])->group(function () {

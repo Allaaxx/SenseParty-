@@ -230,7 +230,7 @@
             background-image: linear-gradient(-45deg, #f53377 0%, #351922 100%);
             transition: 1.8s ease-in-out;
             border-radius: 50%;
-            z-index: 6;
+            z-index: 3;
         }
 
         .image {
