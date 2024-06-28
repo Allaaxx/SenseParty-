@@ -13,6 +13,11 @@ class Products extends Component
 
     public $perPage = 9;
 
+
+    protected $listeners = [
+        'refreshProductsList' => '$refresh'
+    ];
+
     public function render()
     {
         $products = Product::where('user_type', 'seller')

@@ -31,3 +31,38 @@
   
 </div>
 @endsection
+@push('scripts')
+    <script>
+        $(document).on('click', 'a#deleteProductBtn', function(e) {
+            e.preventDefault()
+            var url = "{{ route('seller.product.delete-product') }}"
+            var token = "{{ csrf_token() }}"
+            var product_id = $(this).data('id')
+            swal.fire({
+                title: 'Você tem certeza?',
+                html:   'Você não poderá reverter isso!',
+                showCloseButton:true,
+                showCancelButton:true,
+                focusConfirm:true,
+                confirmButtonText:'Sim, Deletar',
+                cancelButtonText:'Cancelar',
+                confirmButtonColor:'#d33',
+                cancelButtonColor:'#3085d6',
+                width:300,
+                allowOutsideClick:false,
+            }).then( function(result){
+                if( result.value){
+                    $.post(url,{ _token:token, product_id:product_id}, function(response){
+                        toastr.remove();
+                        if(response.status == 1){
+                            Livewire.dispatch('refreshProductsList')
+                            toastr.success(response.msg)
+                        }else{
+                            toastr.error(response.msg)
+                        }
+                    },'json')
+                }
+            })
+        });
+    </script>
+@endpush

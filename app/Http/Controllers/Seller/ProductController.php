@@ -268,4 +268,35 @@ class ProductController extends Controller
         }
     }
 
+    public function deleteProduct(Request $request){
+        $product = Product::with('images')->findOrFail($request->product_id);
+
+        if( $product->images->count() > 1){
+            $images_path = 'images/products/additionals/';
+            foreach($product->images as $item){
+                if( $item->image != '' && File::exists(public_path($images_path.$item->image))){
+                    File::delete(public_path($images_path.$item->image));
+                }
+                $pimage = ProductImage::findOrFail($item->id);
+                $pimage->delete();
+            }
+        }
+
+        $path = 'images/products/';
+        $product_image = $product->product_image;
+        if($product_image != '' && File::exists(public_path($path.$product_image))){
+            File::delete(public_path($path.$product_image));
+        }
+        $delete = $product->delete();
+
+        if($delete){
+            return response()->json(['status' => 1, 'msg' => 'Produto excluído com sucesso.']);
+        }else{
+            return response()->json(['status' => 0, 'msg' => 'Falha ao excluir o produto.']);
+        }
+    }
+    
+    
+    
+
 }

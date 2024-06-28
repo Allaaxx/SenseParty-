@@ -31,15 +31,14 @@ Route::group(['prefix' => ''], function () {
     Route::get('cart', [CartController::class, 'index'])->name('cart.index');
     Route::post('/cart/add', [CartController::class, 'addToCart'])->name('cart.add');
     Route::post('/cart/remove', [CartController::class, 'removeFromCart'])->name('cart.remove');
-
-
+    Route::get('/search', [pesquisaProdController::class, 'pesquisa'])->name('product.search');
+    Route::get('/search-error', [pesquisaProdController::class, 'pesquisa'])->name('product.search-error');
 });
 
 // Rotas para o ProductController
 Route::resource('products', ProductController::class);
 
-Route::get('/search', [pesquisaProdController::class, 'pesquisa'])->name('product.search');
-Route::get('/search-error', [pesquisaProdController::class, 'pesquisa'])->name('product.search-error');
+
 // Rotas para o CartController
 Route::prefix('seller')->group(function () {
     // Rotas para o StripeController
