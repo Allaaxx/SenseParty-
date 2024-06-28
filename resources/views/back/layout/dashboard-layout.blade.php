@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="/front/assets/css/all.min.css">
     <link rel="stylesheet" href="/front/assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/front/assets/css/owl.carousel.css">
-    <link rel="stylesheet" href="/front/assets/css/style.css">
+    
     <link rel="stylesheet" href="/front/assets/css/magnific-popup.css">
     <link rel="stylesheet" href="/front/assets/css/animate.css">
     <link rel="stylesheet" href="/front/assets/css/meanmenu.min.css">
