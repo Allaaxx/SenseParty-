@@ -2784,6 +2784,11 @@ body.IE .register-page-wrap .container{
 	-moz-transition: all 0.8s ease-in-out;
 	-o-transition: all 0.8s ease-in-out;
 	transition: all 0.8s ease-in-out;
+	width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    object-fit: cover;
+   
 }
 .product-list ul li:hover .producct-img img{
 	-webkit-transform: scale(1.3);

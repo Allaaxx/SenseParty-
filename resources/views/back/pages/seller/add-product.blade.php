@@ -145,7 +145,6 @@
         $('input[type="file"][name="product_image"]').ijaboViewer({
             preview: '#image-preview',
             default_img: $('#image-preview').data('ijabo-default-img'),
-            imageShape: "square",
             allowedExtensions: ['jpg', 'jpeg', 'png'],
             onInvalidType: function(message, element) {
                 toastr.error('Tipo de arquivo inválido');
