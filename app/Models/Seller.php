@@ -29,7 +29,7 @@ class Seller extends Authenticatable
         'address',
         'phone',
         'email_verified_at',
-        'verified', 
+        'verified',
         'status',
         'payment_method',
         'payment_email'
@@ -55,10 +55,16 @@ class Seller extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function getPictureAttribute($value){
-        if($value){
-            return asset('/images/users/sellers/'.$value);
-        }else{
+    public function getPictureAttribute($value)
+    {
+        if ($value) {
+            // Verificar se a URL é externa (como uma URL do Google)
+            if (filter_var($value, FILTER_VALIDATE_URL)) {
+                return $value;
+            } else {
+                return asset('/images/users/sellers/' . $value);
+            }
+        } else {
             return asset('/images/users/default-avatar.jpeg');
         }
     }
