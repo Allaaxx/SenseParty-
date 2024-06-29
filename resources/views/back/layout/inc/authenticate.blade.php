@@ -40,7 +40,7 @@
                         <a href="#" class="social-icon">
                             <i class="fab fa-twitter"></i>
                         </a>
-                        <a href="#" class="social-icon">
+                        <a href="{{ route('google-auth')}}" class="social-icon">
                             <i class="fab fa-google"></i>
                         </a>
                         <a href="#" class="social-icon">
@@ -105,7 +105,7 @@
                         <a href="#" class="social-icon">
                             <i class="fab fa-twitter"></i>
                         </a>
-                        <a href="#" class="social-icon">
+                        <a href="{{ route('google-auth')}}" class="social-icon">
                             <i class="fab fa-google"></i>
                         </a>
                         <a href="#" class="social-icon">

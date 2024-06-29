@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontEndController;
+use App\Http\Controllers\GoogleAuthController;
 use App\Http\Controllers\pesquisaProdController;
 use App\Http\Controllers\Seller\CartController;
 use App\Http\Controllers\Seller\ProductController;
@@ -33,6 +34,8 @@ Route::group(['prefix' => ''], function () {
     Route::post('/cart/remove', [CartController::class, 'removeFromCart'])->name('cart.remove');
     Route::get('/search', [pesquisaProdController::class, 'pesquisa'])->name('product.search');
     Route::get('/search-error', [pesquisaProdController::class, 'pesquisa'])->name('product.search-error');
+    Route::get('auth/google', [GoogleAuthController::class, 'redirect'])->name('google-auth');
+    Route::get('auth/google/call-back', [GoogleAuthController::class, 'callBackGoogle']);
 });
 
 // Rotas para o ProductController
