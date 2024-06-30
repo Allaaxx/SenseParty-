@@ -27,11 +27,10 @@
                 <tr class="total-data">
                     <td colspan="2">
                         <div class="d-flex justify-content-center mt-3">
-                            <form method="GET" action="{{ route('checkout') }}" style="background-color: black;">
-                                @csrf <!-- Adiciona o token CSRF -->
-                                <!-- Outros campos do formulário aqui -->
-                                
-                                <button type="submit">Confirmar Pagamento</button>
+                            <form method="POST" action="{{ route('orders.store') }}" style="background-color: black;">
+                                @csrf
+                                <!-- Inserir outros campos do formulário aqui se necessário -->
+                                <button type="submit" >Realizar Pedido</button>
                             </form>
                         </div>
                     </td>

@@ -136,47 +136,59 @@ class SellerController extends Controller
     } // end method
 
     public function loginHandler(Request $request)
-    {
-        $fieldType = filter_var($request->login_id, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
+{
+    $fieldType = filter_var($request->login_id, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
 
-        if ($fieldType == 'email') {
-            $request->validate([
-                'login_id' => 'required|email|exists:sellers,email',
-                'password' => 'required|min:5|max:45'
-            ], [
-                'login_id.required' => 'E-mail ou nome de usuário é obrigatório',
-                'login_id.email' => 'E-mail inválido',
-                'login_id.exists' => 'E-mail não encontrado',
-                'password.required' => 'Senha é obrigatória',
-            ]);
+    if ($fieldType == 'email') {
+        $request->validate([
+            'login_id' => 'required|email|exists:sellers,email',
+            'password' => 'required|min:5|max:45'
+        ], [
+            'login_id.required' => 'E-mail ou nome de usuário é obrigatório',
+            'login_id.email' => 'E-mail inválido',
+            'login_id.exists' => 'E-mail não encontrado',
+            'password.required' => 'Senha é obrigatória',
+        ]);
+    } else {
+        $request->validate([
+            'login_id' => 'required|exists:sellers,username',
+            'password' => 'required|min:5|max:45'
+        ], [
+            'login_id.required' => 'E-mail ou nome de usuário é obrigatório',
+            'login_id.exists' => 'E-mail não encontrado',
+            'password.required' => 'Senha é obrigatória',
+        ]);
+    }
+
+    // Check if the login_id matches an existing seller
+    $seller = Seller::where($fieldType, $request->login_id)->first();
+
+    if (!$seller) {
+        return redirect()->route('seller.auth')->with('fail', 'Não foi possível autenticar. Por favor, faça login usando sua conta do Google.');
+    }
+
+    // Check if the seller's account was created using Google Auth
+    if ($seller->google_id) {
+        // Redirect to Google Auth controller
+        return redirect()->route('seller.auth')->with('fail', 'Não foi possível autenticar. Credenciais Inválidas.');
+    }
+
+    // Attempt to authenticate the seller with password
+    if (Auth::guard('seller')->attempt(['email' => $seller->email, 'password' => $request->password])) {
+        // Check if the user is verified
+        if (!auth('seller')->user()->verified) {
+            Auth::guard('seller')->logout();
+            return redirect()->route('seller.auth')->with('fail', 'Sua conta não está verificada. Verifique seu email');
         } else {
-            $request->validate([
-                'login_id' => 'required|exists:sellers,username',
-                'password' => 'required|min:5|max:45'
-            ], [
-                'login_id.required' => 'E-mail ou nome de usuário é obrigatório',
-                'login_id.exists' => 'E-mail não encontrado',
-                'password.required' => 'Senha é obrigatória',
-            ]);
+            return redirect()->route('seller.home');
         }
+    }
 
-        $creds = array(
-            $fieldType => $request->login_id,
-            'password' => $request->password
-        );
+    // If authentication fails, redirect with a message to login with Google
+    return redirect()->route('seller.auth')->with('fail', 'Não foi possível autenticar. Por favor, faça login usando sua conta do Google.');
+}
 
-        if (Auth::guard('seller')->attempt($creds)) {
-            // return redirect()->route('seller.home');
-            if (!auth('seller')->user()->verified) {
-                Auth::guard('seller')->logout();
-                return redirect()->route('seller.auth')->with('fail', 'Sua conta não está verificada. Verifique seu email');
-            } else {
-                return redirect()->route('seller.home');
-            }
-        } else {
-            return redirect()->route('seller.auth')->with('fail', 'Credenciais inválidas');
-        }
-    } //End method
+
 
     public function logoutHandler(Request $request)
     {
@@ -202,18 +214,18 @@ class SellerController extends Controller
             'email.email' => 'E-mail inválido',
             'email.exists' => 'E-mail não encontrado'
         ]);
-    
+
         // Get seller details
         $seller = Seller::where('email', $request->email)->first();
-    
+
         // Generate reset token
         $token = base64_encode(Str::random(64));
-    
+
         // Check if there is an existing token reset password
         $oldToken = DB::table('password_reset_tokens')
             ->where(['email' => $seller->email, 'guard' => constGuards::SELLER])
             ->first();
-    
+
         if ($oldToken) {
             // Update existing token
             DB::table('password_reset_tokens')
@@ -232,13 +244,13 @@ class SellerController extends Controller
                     'created_at' => Carbon::now()
                 ]);
         }
-    
+
         $actionLink = route('seller.reset-password', ['token' => $token, 'email' => urlencode($seller->email)]);
-    
+
         $data['action_link'] = $actionLink;
         $data['seller'] = $seller;
         $mail_body = view('email-templates.seller-forgot-email-template', $data)->render();
-    
+
         $mailConfig = array(
             'mail_from_email' => env('EMAIL_FROM_ADDRESS'),
             'mail_from_name' => env('EMAIL_FROM_NAME'),
@@ -247,14 +259,14 @@ class SellerController extends Controller
             'mail_subject' => 'Redefinir senha',
             'mail_body' => $mail_body
         );
-    
+
         if (sendEmail($mailConfig)) {
             return redirect()->route('seller.forgot-password')->with('success', 'Link de redefinição de senha enviado para seu e-mail');
         } else {
             return redirect()->route('seller.forgot-password')->with('fail', 'Erro ao enviar link de redefinição de senha');
         }
     }
-    
+
 
     public function showResetForm(Request $request, $token = null)
     {

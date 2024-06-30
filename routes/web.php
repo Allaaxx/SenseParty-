@@ -1,16 +1,16 @@
 <?php
 
 use App\Http\Controllers\FacebookAuthController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontEndController;
 use App\Http\Controllers\GoogleAuthController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\pesquisaProdController;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\Seller\CartController;
 use App\Http\Controllers\Seller\ProductController;
 use App\Http\Controllers\StripeController;
-use App\Livewire\SingleProduct;
-
-
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,22 +39,30 @@ Route::group(['prefix' => ''], function () {
     Route::get('auth/google/call-back', [GoogleAuthController::class, 'callBackGoogle']);
     Route::get('auth/facebook', [FacebookAuthController::class, 'redirect'])->name('facebook-auth');
     Route::get('auth/facebook/callback', [FacebookAuthController::class, 'callBackFacebook'])->name('facebook-callback');
-
 });
 
 // Rotas para o ProductController
 Route::resource('products', ProductController::class);
 
+// Middleware para rotas protegidas
+Route::middleware(['auth:seller'])->group(function () {
+    // Rotas para os Pedidos (OrderController)
+    Route::post('orders', [OrderController::class, 'store'])->name('orders.store');
 
-// Rotas para o CartController
-Route::prefix('seller')->group(function () {
+    // Rotas para avaliações (ReviewController)
+    Route::post('products/{product}/reviews', [ReviewController::class, 'store'])->name('reviews.store');
+
     // Rotas para o StripeController
-    Route::get('checkout', [StripeController::class, 'session'])->name('checkout');
-    Route::get('success', [StripeController::class, 'success'])->name('success');
-    Route::get('cancel', [StripeController::class, 'cancel'])->name('cancel');
+    Route::prefix('seller')->group(function () {
+        Route::get('checkout', [StripeController::class, 'session'])->name('checkout');
+        Route::get('success', [StripeController::class, 'success'])->name('success');
+        Route::get('cancel', [StripeController::class, 'cancel'])->name('cancel');
+    });
 });
 
 // Rotas para páginas de exemplo
 Route::view('/example-page', 'example-page');
 Route::view('/example-auth', 'example-auth');
 Route::view('/example-frontend', 'example-frontend');
+
+

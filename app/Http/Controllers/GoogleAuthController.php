@@ -22,9 +22,10 @@ class GoogleAuthController extends Controller
             $user = Seller::where('google_id', $google_user->getId())->first();
 
             if (!$user) {
+                // Se o usuário do Google não existe, cria um novo
                 $new_user = Seller::create([
                     'name' => $google_user->getName(),
-                    'username' => $google_user->getName(),
+                    'username' => $google_user->getName(), // Você pode ajustar conforme necessário
                     'email' => $google_user->getEmail(),
                     'google_id' => $google_user->getId(),
                     'picture' => $this->transformGoogleImageUrl($google_user->getAvatar()),
@@ -34,7 +35,7 @@ class GoogleAuthController extends Controller
                 Auth::guard('seller')->login($new_user);
                 return redirect()->intended('/seller');
             } else {
-                // Atualiza a imagem do usuário existente
+                // Atualiza a imagem do usuário existente se necessário
                 $user->update([
                     'picture' => $this->transformGoogleImageUrl($google_user->getAvatar())
                 ]);
@@ -49,17 +50,13 @@ class GoogleAuthController extends Controller
 
     protected function transformGoogleImageUrl($url)
     {
-        // Verificar se a URL tem parâmetros e adicionar ou substituir o tamanho conforme necessário
+        // Função para ajustar o tamanho da imagem do Google
         if (strpos($url, 's96-c') !== false) {
-            return str_replace('s96-c', 's150-c', $url); // Ajuste o tamanho conforme necessário
+            return str_replace('s96-c', 's150-c', $url);
         } elseif (strpos($url, '=') !== false) {
-            return preg_replace('/=[^&]*/', '=s150-c', $url); // Ajuste o tamanho conforme necessário
+            return preg_replace('/=[^&]*/', '=s150-c', $url);
         } else {
-            return $url . '=s150-c'; // Ajuste o tamanho conforme necessário
+            return $url . '=s150-c';
         }
     }
-
-    
 }
-
-
