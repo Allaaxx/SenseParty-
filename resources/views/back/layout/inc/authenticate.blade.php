@@ -34,7 +34,7 @@
 
                     <p class="social-text">Ou entre com plataformas sociais</p>
                     <div class="social-media">
-                        <a href="#" class="social-icon">
+                        <a href="{{route('facebook-auth') }}" class="social-icon">
                             <i class="fab fa-facebook-f"></i>
                         </a>
                         <a href="#" class="social-icon">
@@ -99,7 +99,7 @@
 
                     <p class="social-text">Ou cadastre-se com plataformas sociais</p>
                     <div class="social-media">
-                        <a href="#" class="social-icon">
+                        <a href="{{route('facebook-auth') }}" class="social-icon">
                             <i class="fab fa-facebook-f"></i>
                         </a>
                         <a href="#" class="social-icon">

@@ -25,6 +25,7 @@ class Seller extends Authenticatable
         'email',
         'password',
         'google_id',
+        'facebook_id',
         'picture',
         'address',
         'phone',

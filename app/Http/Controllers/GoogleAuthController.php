@@ -32,7 +32,7 @@ class GoogleAuthController extends Controller
                 ]);
 
                 Auth::guard('seller')->login($new_user);
-                return redirect()->intended('/seller/dashboard');
+                return redirect()->intended('/seller');
             } else {
                 // Atualiza a imagem do usuário existente
                 $user->update([
@@ -40,7 +40,7 @@ class GoogleAuthController extends Controller
                 ]);
 
                 Auth::guard('seller')->login($user);
-                return redirect()->intended('/seller/dashboard');
+                return redirect()->intended('/seller');
             }
         } catch (\Exception $e) {
             dd($e->getMessage());
@@ -58,6 +58,8 @@ class GoogleAuthController extends Controller
             return $url . '=s150-c'; // Ajuste o tamanho conforme necessário
         }
     }
+
+    
 }
 
 

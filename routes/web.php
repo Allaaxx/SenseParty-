@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FacebookAuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontEndController;
 use App\Http\Controllers\GoogleAuthController;
@@ -36,6 +37,9 @@ Route::group(['prefix' => ''], function () {
     Route::get('/search-error', [pesquisaProdController::class, 'pesquisa'])->name('product.search-error');
     Route::get('auth/google', [GoogleAuthController::class, 'redirect'])->name('google-auth');
     Route::get('auth/google/call-back', [GoogleAuthController::class, 'callBackGoogle']);
+    Route::get('auth/facebook', [FacebookAuthController::class, 'redirect'])->name('facebook-auth');
+    Route::get('auth/facebook/callback', [FacebookAuthController::class, 'callBackFacebook'])->name('facebook-callback');
+
 });
 
 // Rotas para o ProductController
